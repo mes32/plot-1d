@@ -7,10 +7,9 @@
 
 # Define project directory variables
 SRC = ./src/
-SRC_PLOT = ./src/plot1d/ 
+SRC_PLOT = ./src/plot1d/
 
 BUILD = ./build/classes/
-#BUILD = ./build/classes/plot1d/
 
 CP = 'build/classes'
 
@@ -33,7 +32,7 @@ JC = javac
 # List each java source code file that needs to be compiled into a class file
 CLASSES = \
 	$(SRC)Plot1dApp.java \
-	./src/plot1d/InputObject.java \
+	$(SRC_PLOT)InputObject.java \
 
 
 # Set the default make target
