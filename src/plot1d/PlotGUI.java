@@ -8,6 +8,7 @@
 package plot1d;
 
 import java.io.*;
+import javax.swing.*;
 
 /**
  * This is the main plot-1d GUI in which the results of plotting will be displayed
@@ -18,6 +19,12 @@ public class PlotGUI {
 
     public PlotGUI() {
         frame = new PlotFrame();
-        System.out.println("PlotGUI.java");
+
+        JLabel label = new JLabel("Dummy Label text");
+        frame.add(label);
+
+        //Display the window.
+        frame.pack();
+        frame.setVisible(true);
     }
 }

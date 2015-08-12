@@ -16,7 +16,14 @@ import java.awt.*;
  * This is an extension of JFrame for use by PlotGUI
  */
 public class PlotFrame extends JFrame {
+
+    private static final int WIDTH = 400;
+    private static final int HEIGHT = 300;
+
     public PlotFrame() {
-        System.out.println("PlotFrame.java");
+        setTitle("Dummy Frame Title");
+        setSize(WIDTH, HEIGHT);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }
+
