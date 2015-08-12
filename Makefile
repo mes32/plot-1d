@@ -33,6 +33,8 @@ JC = javac
 CLASSES = \
 	$(SRC)Plot1dApp.java \
 	$(SRC_PLOT)InputObject.java \
+	$(SRC_PLOT)PlotGUI.java \
+	$(SRC_PLOT)PlotFrame.java \
 
 
 # Set the default make target
