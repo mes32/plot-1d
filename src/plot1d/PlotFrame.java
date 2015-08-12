@@ -8,12 +8,14 @@
 package plot1d;
 
 import java.io.*;
+import javax.swing.JFrame;
+import java.awt.*;
 
 
 /**
  * This is an extension of JFrame for use by PlotGUI
  */
-public class PlotFrame {
+public class PlotFrame extends JFrame {
     public PlotFrame() {
         System.out.println("PlotFrame.java");
     }

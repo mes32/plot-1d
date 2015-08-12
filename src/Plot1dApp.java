@@ -12,6 +12,7 @@ import plot1d.*;
 public class Plot1dApp {
     public static void main(String[] args) {
         InputObject input = new InputObject(args);
+        PlotGUI gui = new PlotGUI();
 
         System.out.println("Hello plot-1d application.");
     }
