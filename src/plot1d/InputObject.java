@@ -1,7 +1,8 @@
 /**
  *  InputObject.java - plot-1d
  *
- *  This is the main application class for the plot-1d project. 
+ *  This class parses the input arguments and packages them into an object for use by the other 
+ *  classes. 
  *
  */
 
