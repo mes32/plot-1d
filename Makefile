@@ -35,6 +35,9 @@ CLASSES = \
 	$(SRC_PLOT)InputObject.java \
 	$(SRC_PLOT)PlotGUI.java \
 	$(SRC_PLOT)PlotFrame.java \
+	$(SRC_PLOT)DataSet.java \
+	$(SRC_PLOT)DataField.java \
+	$(SRC_PLOT)DataPoint.java \
 
 
 # Set the default make target
