@@ -1,8 +1,7 @@
-/**
+/*
  *  InputObject.java - plot-1d
  *
- *  This class parses the input arguments and packages them into an object for use by the other 
- *  classes. 
+ *  This class is part of the package plot1d
  *
  */
 
@@ -10,6 +9,11 @@ package plot1d;
 
 import java.io.*;
 
+
+/**
+ * This class parses the input arguments and packages them into an object for use by the other 
+ * classes. 
+ */
 public class InputObject {
 
     private File file;
