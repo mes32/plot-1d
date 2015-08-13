@@ -11,13 +11,15 @@ import java.io.*;
 
 
 /**
- * This represents a dataset to plot using plot-1d
+ * This represents one field/variable in a dataset to plot using plot-1d. See DataSet.java.
  */
 public class DataField {
 
+    private String name;
     private DataPoint[] points;
 
-    public DataField() {
-        
+    public DataField(DataPoint[] points) {
+        this.name = null;
+        this.points = points;
     }
 }

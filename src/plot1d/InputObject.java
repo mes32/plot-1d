@@ -18,16 +18,19 @@ public class InputObject {
 
     private File file;
     private String fileName;
+    private DataSet dataSet;
 
     public InputObject(String[] args) {
         if (args.length == 0) {
-            // *** Should be an exception eventually
+            // *** Should throw an exception instead of crash
             System.err.println("Missing input file");
             System.exit(1);
         }
 
         String path = args[0];
         file = new File(path);
+
+        dataSet = new DataSet(file);
     }
 
     public String getFileName() {
