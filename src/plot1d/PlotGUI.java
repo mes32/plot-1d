@@ -17,8 +17,8 @@ public class PlotGUI {
 
     private PlotFrame frame;
 
-    public PlotGUI() {
-        frame = new PlotFrame();
+    public PlotGUI(InputObject input) {
+        frame = new PlotFrame(input.getFileName());
 
         JLabel label = new JLabel("Dummy Label text");
         frame.add(label);

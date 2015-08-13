@@ -17,12 +17,8 @@ import java.awt.*;
  */
 public class PlotFrame extends JFrame {
 
-    private static final int WIDTH = 400;
-    private static final int HEIGHT = 300;
-
-    public PlotFrame() {
-        setTitle("Dummy Frame Title");
-        setSize(WIDTH, HEIGHT);
+    public PlotFrame(String plottedFileName) {
+        setTitle(plottedFileName + "  -  plot-1d");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }
