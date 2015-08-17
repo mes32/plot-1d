@@ -8,7 +8,7 @@
 package plot1d;
 
 import java.io.*;
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.*;
 
 
@@ -19,6 +19,7 @@ public class PlotFrame extends JFrame {
 
     public PlotFrame(String plottedFileName) {
         setTitle(plottedFileName + "  -  plot-1d");
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }

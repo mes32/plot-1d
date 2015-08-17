@@ -16,12 +16,13 @@ import javax.swing.*;
 public class PlotGUI {
 
     private PlotFrame frame;
+    private PlotPanel panel;
 
     public PlotGUI(InputObject input) {
         frame = new PlotFrame(input.getFileName());
 
-        JLabel label = new JLabel("Dummy Label text");
-        frame.add(label);
+        panel = new PlotPanel();
+        frame.add(panel);
 
         //Display the window.
         frame.pack();

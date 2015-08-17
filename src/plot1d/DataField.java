@@ -18,7 +18,7 @@ public class DataField {
     private String name;
     private DataPoint[] points;
 
-    public DataField(DataPoint[] points) {
+    DataField(DataPoint[] points) {
         this.name = null;
         this.points = points;
     }
