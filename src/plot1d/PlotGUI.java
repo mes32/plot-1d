@@ -1,8 +1,8 @@
 /*
- *  PlotGUI.java
- *
- *  This class is part of the package plot1d
- *
+    PlotGUI.java
+
+    This class is part of the package plot1d
+
  */
 
 package plot1d;
@@ -27,5 +27,18 @@ public class PlotGUI {
         //Display the window.
         frame.pack();
         frame.setVisible(true);
+
+        // Calculate borders and offsets
+
+        //panel.drawAxesTertiary();
+        //panel.drawAxesSecondary();
+        //panel.drawAxesPrimary();
+        //panel.drawAxesIncrements();
+        //panel.drawBorderBox();
+        //panel.drawXLab();
+        //panel.drawYLab();
+        //panel.drawTitle();
+        //panel.drawPoints(input.getPoints());
+        //panel.drawKey();
     }
 }

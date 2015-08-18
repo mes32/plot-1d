@@ -21,15 +21,15 @@ public class PlotPanel extends JPanel {
     private static final int HEIGHT = 400;
 
     public PlotPanel() {
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        this.setSize(new Dimension(WIDTH, HEIGHT));
-        this.setMinimumSize(new Dimension(WIDTH, HEIGHT));
-        this.setMaximumSize(new Dimension(WIDTH, HEIGHT));
-        this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        setSize(new Dimension(WIDTH, HEIGHT));
+        setMinimumSize(new Dimension(WIDTH, HEIGHT));
+        setMaximumSize(new Dimension(WIDTH, HEIGHT));
+        setPreferredSize(new Dimension(WIDTH, HEIGHT));
 
 
-        this.setBackground(Color.white);
+        setBackground(Color.white);
     }
 }
 

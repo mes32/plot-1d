@@ -1,8 +1,8 @@
 /*
- *  InputObject.java - plot-1d
- *
- *  This class is part of the package plot1d
- *
+    InputObject.java - plot-1d
+
+    This class is part of the package plot1d
+
  */
 
 package plot1d;

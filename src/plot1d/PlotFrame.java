@@ -1,8 +1,8 @@
 /*
- *  PlotFrame.java
- *
- *  This class is part of the package plot1d
- *
+    PlotFrame.java
+
+    This class is part of the package plot1d
+
  */
 
 package plot1d;

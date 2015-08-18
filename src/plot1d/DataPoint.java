@@ -1,8 +1,8 @@
 /*
- *  DataPoint.java - plot-1d
- *
- *  This class is part of the package plot1d
- *
+    DataPoint.java - plot-1d
+
+    This class is part of the package plot1d
+
  */
 
 package plot1d;
