@@ -11,6 +11,8 @@ import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 
+import plot1d.graphicComponents.*;
+
 
 /**
  * This is an extension of JPanel for use by PlotGUI
@@ -24,12 +26,32 @@ public class PlotPanel extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         setSize(new Dimension(WIDTH, HEIGHT));
-        setMinimumSize(new Dimension(WIDTH, HEIGHT));
-        setMaximumSize(new Dimension(WIDTH, HEIGHT));
+        //setMinimumSize(new Dimension(WIDTH, HEIGHT));
+        //setMaximumSize(new Dimension(WIDTH, HEIGHT));
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
 
-
         setBackground(Color.white);
+    }
+
+    public void drawAll() {
+        // Calculate borders and offsets
+
+        //drawAxesTertiary();
+        //drawAxesSecondary();
+        //drawAxesPrimary();
+        //drawAxesIncrements();
+        drawBorderBox();
+        //drawXLab();
+        //drawYLab();
+        //drawTitle();
+        //drawPoints(input.getPoints());
+        //drawKey();
+
+        //repaint();
+    }
+
+    private void drawBorderBox() {
+        BorderBox box = new BorderBox();
     }
 }
 

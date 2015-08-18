@@ -28,17 +28,6 @@ public class PlotGUI {
         frame.pack();
         frame.setVisible(true);
 
-        // Calculate borders and offsets
-
-        //panel.drawAxesTertiary();
-        //panel.drawAxesSecondary();
-        //panel.drawAxesPrimary();
-        //panel.drawAxesIncrements();
-        //panel.drawBorderBox();
-        //panel.drawXLab();
-        //panel.drawYLab();
-        //panel.drawTitle();
-        //panel.drawPoints(input.getPoints());
-        //panel.drawKey();
+        panel.drawAll();
     }
 }

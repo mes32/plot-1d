@@ -8,6 +8,7 @@
 # Define project directory variables
 SRC = ./src/
 SRC_PLOT = ./src/plot1d/
+SRC_GRAPHICS = ./src/plot1d/graphicComponents/
 
 BUILD = ./build/classes/
 
@@ -39,6 +40,7 @@ CLASSES = \
 	$(SRC_PLOT)DataSet.java \
 	$(SRC_PLOT)DataField.java \
 	$(SRC_PLOT)DataPoint.java \
+	$(SRC_GRAPHICS)BorderBox.java \
 
 
 # Set the default make target
