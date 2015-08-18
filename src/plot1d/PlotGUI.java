@@ -28,6 +28,6 @@ public class PlotGUI {
         frame.pack();
         frame.setVisible(true);
 
-        panel.drawAll();
+        //panel.drawAll();
     }
 }

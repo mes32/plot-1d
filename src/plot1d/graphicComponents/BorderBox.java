@@ -15,17 +15,22 @@ import java.awt.*;
 /**
  * This is an extension of JPanel for use by PlotGUI
  */
-public class BorderBox extends JComponent {
+public class BorderBox {
 
     public BorderBox() {
-        System.out.println("BorderBox() constructor");
+        //System.out.println("BorderBox() constructor");
     }
 
-    @Override
+    /*@Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        //g.setColor(Color.red);
+        g.drawLine(0, 0, 200, 200);
+    }*/
+
+    public void draw(Graphics g) {
         g.setColor(Color.red);
-        g.drawLine(10, 10, 20, 20);
+        g.drawLine(0, 0, 100, 100);
     }
 }
 

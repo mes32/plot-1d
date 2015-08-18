@@ -33,25 +33,32 @@ public class PlotPanel extends JPanel {
         setBackground(Color.white);
     }
 
-    public void drawAll() {
+    private void drawAll(Graphics g) {
         // Calculate borders and offsets
 
         //drawAxesTertiary();
         //drawAxesSecondary();
         //drawAxesPrimary();
         //drawAxesIncrements();
-        drawBorderBox();
+        drawBorderBox(g);
         //drawXLab();
         //drawYLab();
         //drawTitle();
         //drawPoints(input.getPoints());
         //drawKey();
 
-        //repaint();
+        repaint();
     }
 
-    private void drawBorderBox() {
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        drawAll(g);
+    }
+
+    private void drawBorderBox(Graphics g) {
         BorderBox box = new BorderBox();
+        box.draw(g);
     }
 }
 
