@@ -36,4 +36,8 @@ public class InputObject {
     public String getFileName() {
         return file.getName() + " (" + file.getParentFile().getPath() + ")";
     }
+
+    public DataPoint[] getPoints() {
+        return dataSet.getPoints();
+    }
 }

@@ -19,21 +19,27 @@ public class BorderBox {
 
     private static final Color BORDER_COLOR = Color.black;
 
-    private int x1;
-    private int y1;
-    private int x2;
-    private int y2;
+    private Point min;
+    private Point max;
 
-    public BorderBox(int x1, int y1, int x2, int y2) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
+    private int minX;
+    private int minY;
+    private int maxX;
+    private int maxY;
+
+    public BorderBox(Point min, Point max) {
+        this.min = min;
+        this.max = max;
+
+        minX = (int)min.getX();
+        minY = (int)min.getY();
+        maxX = (int)max.getX();
+        maxY = (int)max.getY();
     }
 
     public void draw(Graphics g) {
         g.setColor(BORDER_COLOR);
-        g.drawRect(x1, y1, x2, y2);
+        g.drawRect(minX, minY, maxX, maxY);
     }
 }
 

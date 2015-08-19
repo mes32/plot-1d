@@ -40,6 +40,8 @@ CLASSES = \
 	$(SRC_PLOT)DataSet.java \
 	$(SRC_PLOT)DataField.java \
 	$(SRC_PLOT)DataPoint.java \
+	$(SRC_PLOT)BoxTransform.java \
+	$(SRC_PLOT)Extent.java \
 	$(SRC_GRAPHICS)BorderBox.java \
 
 

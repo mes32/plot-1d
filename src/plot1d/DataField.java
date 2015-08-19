@@ -22,4 +22,12 @@ public class DataField {
         this.name = null;
         this.points = points;
     }
+
+    public DataPoint[] getPoints() {
+        return points;
+    }
+
+    public int getPointsLength() {
+        return points.length;
+    }
 }

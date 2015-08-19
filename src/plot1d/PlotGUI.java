@@ -21,13 +21,11 @@ public class PlotGUI {
     public PlotGUI(InputObject input) {
         frame = new PlotFrame(input.getFileName());
 
-        panel = new PlotPanel();
+        panel = new PlotPanel(input.getPoints());
         frame.add(panel);
 
         //Display the window.
         frame.pack();
         frame.setVisible(true);
-
-        //panel.drawAll();
     }
 }

@@ -71,6 +71,26 @@ public class DataSet {
         fields[0] = new DataField(points);
     }
 
+    public DataPoint[] getPoints() {
+
+        int totalLength = 0;
+        for (DataField field : fields) {
+            totalLength += field.getPointsLength();
+        }
+
+        DataPoint[] points = new DataPoint[totalLength];
+        int index = 0;
+        for (DataField field : fields) {
+            DataPoint[] tempArray = field.getPoints();
+            for (int j=0; j < tempArray.length; j++) {
+                points[index] = tempArray[j];
+                index++;
+            }
+        }
+
+        return points;
+    }
+
     /*public void addFile(File file) {
 
     }*/
