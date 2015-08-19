@@ -8,7 +8,7 @@
 # Define project directory variables
 SRC = ./src/
 SRC_PLOT = ./src/plot1d/
-SRC_GRAPHICS = ./src/plot1d/graphicComponents/
+SRC_GRAPHICS = ./src/plot1d/graphicElements/
 
 BUILD = ./build/classes/
 

@@ -11,7 +11,7 @@ import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 
-import plot1d.graphicComponents.*;
+import plot1d.graphicElements.*;
 
 
 /**

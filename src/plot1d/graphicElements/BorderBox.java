@@ -5,7 +5,7 @@
 
  */
 
-package plot1d.graphicComponents;
+package plot1d.graphicElements;
 
 import java.io.*;
 import javax.swing.*;
