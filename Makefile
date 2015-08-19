@@ -43,6 +43,7 @@ CLASSES = \
 	$(SRC_PLOT)BoxTransform.java \
 	$(SRC_PLOT)Extent.java \
 	$(SRC_GRAPHICS)BorderBox.java \
+	$(SRC_GRAPHICS)PlotPoint.java \
 
 
 # Set the default make target

@@ -19,42 +19,73 @@ import plot1d.graphicElements.*;
  */
 public class BoxTransform {
 
-    private Point min;
-    private Point max;
+    private Point guiMin;
+    private Point guiMax;
+    private int guiWidth;
+    private int guiHeight;
+
+    private double dataMinX;
+    private double dataMaxX;
+    private double dataMinY;
+    private double dataMaxY;
+    private double dataWidth;
+    private double dataHeight;
 
     public BoxTransform(Dimension panelSize, Extent pointsExtent) {
-        int width = (int)panelSize.getWidth();
-        int height = (int)panelSize.getHeight();
+        int panelWidth = (int)panelSize.getWidth();
+        int panelHeight = (int)panelSize.getHeight();
 
-        int xMargin = 20;
-        int yMargin = 20;
+        int marginX = 20;
+        int marginY = 20;
 
-        min = new Point(xMargin, yMargin);
-        max = new Point(width - 2*xMargin, height - 2*yMargin);
+        guiMin = new Point(marginX, marginY);
+        guiMax = new Point(panelWidth - 2*marginX, panelHeight - 2*marginY);
+
+        guiWidth = panelWidth - 2*marginX;
+        guiHeight = panelHeight - 2*marginY;
+
+        double inputRangeX = pointsExtent.getMaxX() - pointsExtent.getMinX();
+        double inputRangeY = pointsExtent.getMaxY() - pointsExtent.getMinY();
+
+        dataMinX = pointsExtent.getMinX() - 0.05*inputRangeX;
+        dataMaxX = pointsExtent.getMaxX() + 0.05*inputRangeX;
+        dataMinY = pointsExtent.getMinY() - 0.05*inputRangeY;
+        dataMaxY = pointsExtent.getMaxY() + 0.05*inputRangeY;
+
+        dataWidth = dataMaxX - dataMinX;
+        dataHeight = dataMaxY - dataMinY;
     }
 
-    public Point getMin() {
-        return min;
+    public Point getGuiMin() {
+        return guiMin;
     }
 
-    public Point getMax() {
-        return max;
+    public Point getGuiMax() {
+        return guiMax;
     }
 
-    public int getX(int x) {
-        return 0;
+    public int mapX(double x) {
+        double temp = (x - dataMinX) / dataWidth;
+        temp = temp * (double)guiWidth + guiMin.getX();
+        return (int)temp;
     }
 
-    public int getX(double x) {
-        return 0;
+    public int mapX(int x) {
+        return mapX((double)x);
     }
 
-    public int getY(int y) {
-        return 0;
+    public int mapY(double y) {
+        double temp = (y - dataMinY) / dataHeight;
+        temp = temp * (double)guiHeight + guiMin.getY();
+        return (int)temp;
     }
 
-    public int getY(double y) {
-        return 0;
+    public int mapY(int y) {
+        return mapY((double)y);
     }
+
+    public Point mapPoint(DataPoint point) {
+        return new Point(mapX(point.getX()), mapY(point.getY()));
+    } 
 }
 
