@@ -17,20 +17,23 @@ import java.awt.*;
  */
 public class BorderBox {
 
-    public BorderBox() {
-        //System.out.println("BorderBox() constructor");
+    private static final Color BORDER_COLOR = Color.black;
+
+    private int x1;
+    private int y1;
+    private int x2;
+    private int y2;
+
+    public BorderBox(int x1, int y1, int x2, int y2) {
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
     }
 
-    /*@Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        //g.setColor(Color.red);
-        g.drawLine(0, 0, 200, 200);
-    }*/
-
     public void draw(Graphics g) {
-        g.setColor(Color.red);
-        g.drawLine(0, 0, 100, 100);
+        g.setColor(BORDER_COLOR);
+        g.drawRect(x1, y1, x2, y2);
     }
 }
 
