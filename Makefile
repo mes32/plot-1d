@@ -44,6 +44,7 @@ CLASSES = \
 	$(SRC_PLOT)Extent.java \
 	$(SRC_GRAPHICS)BorderBox.java \
 	$(SRC_GRAPHICS)PlotPoint.java \
+	$(SRC_GRAPHICS)PrimaryAxes.java \
 
 
 # Set the default make target

@@ -64,6 +64,30 @@ public class BoxTransform {
         return guiMax;
     }
 
+    public int getGuiMinX() {
+        return (int)guiMin.getX();
+    }
+
+    public int getGuiMaxX() {
+        return (int)guiMax.getX();
+    }
+
+    public int getGuiMinY() {
+        return (int)guiMin.getY();
+    }
+
+    public int getGuiMaxY() {
+        return (int)guiMax.getY();
+    }
+
+    public int getGuiWidth() {
+        return guiWidth;
+    }
+
+    public int getGuiHeight() {
+        return guiHeight;
+    }
+
     public int mapX(double x) {
         double temp = (x - dataMinX) / dataWidth;
         temp = temp * (double)guiWidth + guiMin.getX();
