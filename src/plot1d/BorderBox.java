@@ -15,7 +15,7 @@ import java.awt.*;
 /**
  * This is an extension of JPanel for use by PlotGUI
  */
-public class BorderBoxTemp {
+public class BorderBox {
 
     private static final Color BORDER_COLOR = Color.black;
 
@@ -30,7 +30,7 @@ public class BorderBoxTemp {
     private int maxX;
     private int maxY;
 
-    public BorderBoxTemp(Dimension panelSize) {
+    public BorderBox(Dimension panelSize) {
         int panelWidth = (int)panelSize.getWidth();
         int panelHeight = (int)panelSize.getHeight();
 

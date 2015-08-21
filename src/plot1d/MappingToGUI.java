@@ -11,7 +11,6 @@ import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 
-import plot1d.graphicElements.*;
 
 
 /**
@@ -31,20 +30,13 @@ public class MappingToGUI {
     private double dataWidth;
     private double dataHeight;
 
-    public MappingToGUI(Dimension panelSize, Extent pointsExtent) {
-        int panelWidth = (int)panelSize.getWidth();
-        int panelHeight = (int)panelSize.getHeight();
+    public MappingToGUI(BorderBox box, Extent pointsExtent) {
 
-        int marginTop = 20;
-        int marginBottom = 80;
-        int marginLeft = 80;
-        int marginRight = 20;
+        guiMin = box.getMin();
+        guiMax = box.getMax();
 
-        guiMin = new Point(marginLeft, marginTop);
-        guiMax = new Point(panelWidth - marginRight - marginLeft, panelHeight - marginTop - marginBottom);
-
-        guiWidth = panelWidth - marginRight - marginLeft;
-        guiHeight = panelHeight - marginTop - marginBottom;
+        guiWidth = box.getWidth();
+        guiHeight = box.getHeight();
 
         double inputRangeX = pointsExtent.getMaxX() - pointsExtent.getMinX();
         double inputRangeY = pointsExtent.getMaxY() - pointsExtent.getMinY();
@@ -56,14 +48,6 @@ public class MappingToGUI {
 
         dataWidth = dataMaxX - dataMinX;
         dataHeight = dataMaxY - dataMinY;
-    }
-
-    public Point getGuiMin() {
-        return guiMin;
-    }
-
-    public Point getGuiMax() {
-        return guiMax;
     }
 
     public int getGuiMinX() {
@@ -80,14 +64,6 @@ public class MappingToGUI {
 
     public int getGuiMaxY() {
         return (int)guiMax.getY();
-    }
-
-    public int getGuiWidth() {
-        return guiWidth;
-    }
-
-    public int getGuiHeight() {
-        return guiHeight;
     }
 
     public int mapX(double x) {

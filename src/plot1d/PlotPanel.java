@@ -39,13 +39,15 @@ public class PlotPanel extends JPanel {
     }
 
     private void drawAll(Graphics g) {
-        MappingToGUI trans = new MappingToGUI(getSize(), DataPoint.getExtent(points));
+
+        BorderBox box = new BorderBox(getSize());
+        MappingToGUI trans = new MappingToGUI(box, DataPoint.getExtent(points));
 
         //drawAxesTertiary();
         //drawAxesSecondary();
         drawAxesPrimary(g, trans);
         //drawAxesIncrements();
-        drawBorderBox(g, trans);
+        drawBorderBox(g, box);
         //drawXLab();
         //drawYLab();
         //drawTitle();
@@ -65,8 +67,8 @@ public class PlotPanel extends JPanel {
         axes.draw(g);
     }
 
-    private void drawBorderBox(Graphics g, MappingToGUI trans) {
-        BorderBox box = new BorderBox(trans.getGuiMin(), trans.getGuiMax());
+    private void drawBorderBox(Graphics g, BorderBox box) {
+        //BorderBox box = new BorderBox(trans.getGuiMin(), trans.getGuiMax());
         box.draw(g);
     }
 

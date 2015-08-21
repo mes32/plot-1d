@@ -40,10 +40,9 @@ CLASSES = \
 	$(SRC_PLOT)DataSet.java \
 	$(SRC_PLOT)DataField.java \
 	$(SRC_PLOT)DataPoint.java \
-	$(SRC_PLOT)BorderBoxTemp.java \
+	$(SRC_PLOT)BorderBox.java \
 	$(SRC_PLOT)MappingToGUI.java \
 	$(SRC_PLOT)Extent.java \
-	$(SRC_GRAPHICS)BorderBox.java \
 	$(SRC_GRAPHICS)PlotPoint.java \
 	$(SRC_GRAPHICS)PrimaryAxes.java \
 
