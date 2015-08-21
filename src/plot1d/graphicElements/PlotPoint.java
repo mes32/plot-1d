@@ -19,7 +19,7 @@ import plot1d.*;
  */
 public class PlotPoint {
 
-    private static final Color POINT_COLOR = Color.blue;
+    private static final Color POINT_COLOR = new Color (70, 70, 255);
 
     private Point location;
 
