@@ -35,14 +35,16 @@ public class BoxTransform {
         int panelWidth = (int)panelSize.getWidth();
         int panelHeight = (int)panelSize.getHeight();
 
-        int marginX = 20;
-        int marginY = 20;
+        int marginTop = 20;
+        int marginBottom = 80;
+        int marginLeft = 80;
+        int marginRight = 20;
 
-        guiMin = new Point(marginX, marginY);
-        guiMax = new Point(panelWidth - 2*marginX, panelHeight - 2*marginY);
+        guiMin = new Point(marginLeft, marginTop);
+        guiMax = new Point(panelWidth - marginRight - marginLeft, panelHeight - marginTop - marginBottom);
 
-        guiWidth = panelWidth - 2*marginX;
-        guiHeight = panelHeight - 2*marginY;
+        guiWidth = panelWidth - marginRight - marginLeft;
+        guiHeight = panelHeight - marginTop - marginBottom;
 
         double inputRangeX = pointsExtent.getMaxX() - pointsExtent.getMinX();
         double inputRangeY = pointsExtent.getMaxY() - pointsExtent.getMinY();
