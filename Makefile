@@ -43,7 +43,6 @@ CLASSES = \
 	$(SRC_PLOT)BorderBox.java \
 	$(SRC_PLOT)MappingToGUI.java \
 	$(SRC_PLOT)Extent.java \
-	$(SRC_GRAPHICS)PlotPoint.java \
 	$(SRC_GRAPHICS)PrimaryAxes.java \
 
 

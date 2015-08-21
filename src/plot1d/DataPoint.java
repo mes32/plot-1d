@@ -8,6 +8,7 @@
 package plot1d;
 
 import java.io.*;
+import java.awt.*;
 
 
 /**
@@ -15,6 +16,8 @@ import java.io.*;
  * DataField.java.
  */
 public class DataPoint {
+
+    private static final Color POINT_COLOR = new Color (50, 50, 255);
 
     private double x;
     private double y;
@@ -59,5 +62,11 @@ public class DataPoint {
             }
         }
         return new Extent(minX, minY, maxX, maxY);
+    }
+
+    public void draw(Graphics g, MappingToGUI trans) {
+        Point mappedLocation = trans.mapPoint(this);
+        g.setColor(POINT_COLOR);
+        g.drawOval((int)mappedLocation.getX()-3, (int)mappedLocation.getY()-3, 6, 6);
     }
 }

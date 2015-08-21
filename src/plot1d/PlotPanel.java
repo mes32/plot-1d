@@ -74,8 +74,8 @@ public class PlotPanel extends JPanel {
 
     private void drawPoints(Graphics g, MappingToGUI trans) {
         for (DataPoint point : points) {
-            PlotPoint plotPoint = new PlotPoint(point, trans);
-            plotPoint.draw(g);
+            //PlotPoint plotPoint = new PlotPoint(point, trans);
+            point.draw(g, trans);
         }
     }
 }
