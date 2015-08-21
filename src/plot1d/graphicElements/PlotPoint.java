@@ -23,7 +23,7 @@ public class PlotPoint {
 
     private Point location;
 
-    public PlotPoint(DataPoint input, BoxTransform trans) {
+    public PlotPoint(DataPoint input, MappingToGUI trans) {
         location = trans.mapPoint(input);
     }
 

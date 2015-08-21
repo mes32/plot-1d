@@ -1,5 +1,5 @@
 /*
-    BoxTransform.java
+    MappingToGUI.java
 
     This class is part of the package plot1d
 
@@ -17,7 +17,7 @@ import plot1d.graphicElements.*;
 /**
  * This represents the transform between data coordinate space and PlotPanel's GUI coordinate space
  */
-public class BoxTransform {
+public class MappingToGUI {
 
     private Point guiMin;
     private Point guiMax;
@@ -31,7 +31,7 @@ public class BoxTransform {
     private double dataWidth;
     private double dataHeight;
 
-    public BoxTransform(Dimension panelSize, Extent pointsExtent) {
+    public MappingToGUI(Dimension panelSize, Extent pointsExtent) {
         int panelWidth = (int)panelSize.getWidth();
         int panelHeight = (int)panelSize.getHeight();
 

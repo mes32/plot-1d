@@ -39,7 +39,7 @@ public class PlotPanel extends JPanel {
     }
 
     private void drawAll(Graphics g) {
-        BoxTransform trans = new BoxTransform(getSize(), DataPoint.getExtent(points));
+        MappingToGUI trans = new MappingToGUI(getSize(), DataPoint.getExtent(points));
 
         //drawAxesTertiary();
         //drawAxesSecondary();
@@ -60,17 +60,17 @@ public class PlotPanel extends JPanel {
         repaint();
     }
 
-    private void drawAxesPrimary(Graphics g, BoxTransform trans) {
+    private void drawAxesPrimary(Graphics g, MappingToGUI trans) {
         PrimaryAxes axes = new PrimaryAxes(trans);
         axes.draw(g);
     }
 
-    private void drawBorderBox(Graphics g, BoxTransform trans) {
+    private void drawBorderBox(Graphics g, MappingToGUI trans) {
         BorderBox box = new BorderBox(trans.getGuiMin(), trans.getGuiMax());
         box.draw(g);
     }
 
-    private void drawPoints(Graphics g, BoxTransform trans) {
+    private void drawPoints(Graphics g, MappingToGUI trans) {
         for (DataPoint point : points) {
             PlotPoint plotPoint = new PlotPoint(point, trans);
             plotPoint.draw(g);

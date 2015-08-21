@@ -29,7 +29,7 @@ public class PrimaryAxes {
     private int minY;
     private int maxY;
 
-    public PrimaryAxes(BoxTransform trans) {
+    public PrimaryAxes(MappingToGUI trans) {
         axisX = trans.mapX(0);
         axisY = trans.mapY(0);
 
