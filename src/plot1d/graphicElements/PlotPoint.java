@@ -15,11 +15,11 @@ import plot1d.*;
 
 
 /**
- * This is an extension of JPanel for use by PlotGUI
+ * This represents a point on the scatter plot
  */
 public class PlotPoint {
 
-    private static final Color POINT_COLOR = new Color (70, 70, 255);
+    private static final Color POINT_COLOR = new Color (50, 50, 255);
 
     private Point location;
 
