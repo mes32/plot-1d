@@ -29,7 +29,7 @@ public class PlotPoint {
 
     public void draw(Graphics g) {
         g.setColor(POINT_COLOR);
-        g.drawRect((int)location.getX()-1, (int)location.getY()-1, 3, 3);
+        g.drawOval((int)location.getX()-3, (int)location.getY()-3, 6, 6);
     }
 }
 
