@@ -17,11 +17,8 @@ import plot1d.*;
 /**
  * This represents a horizontal axis drawn on PlotPanel
  */
-public class HorizontalAxis extends AbstractAxis {
+abstract class HorizontalAxis extends AbstractAxis {
 
-    private static final Color AXIS_COLOR = new Color(190, 190, 190);
-
-    private int axisX;
     private int axisY;
 
     private int minX;
@@ -29,9 +26,8 @@ public class HorizontalAxis extends AbstractAxis {
     private int minY;
     private int maxY;
 
-    public HorizontalAxis(MappingToGUI trans) {
-        axisX = trans.mapX(0);
-        axisY = trans.mapY(0);
+    public HorizontalAxis(double y, MappingToGUI trans) {
+        axisY = trans.mapY(y);
 
         minX = trans.getBox().getMinX();
         maxX = trans.getBox().getMaxX();
@@ -39,8 +35,11 @@ public class HorizontalAxis extends AbstractAxis {
         maxY = trans.getBox().getMaxY();
     }
 
+
+    abstract Color getColor();
+
     public void draw(Graphics g) {
-        g.setColor(AXIS_COLOR);
+        g.setColor(this.getColor());
         g.drawLine(minX, axisY, maxX + minX, axisY);
     }
 }
