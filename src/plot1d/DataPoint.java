@@ -17,6 +17,8 @@ import java.awt.*;
  */
 public class DataPoint {
 
+    private static final int POINT_RADIUS = 6;
+    private static final int HALF_POINT_RADIUS = POINT_RADIUS / 2;
     private static final Color POINT_COLOR = new Color (50, 50, 255);
 
     private double x;
@@ -67,6 +69,6 @@ public class DataPoint {
     public void draw(Graphics g, MappingToGUI trans) {
         Point mappedLocation = trans.mapPoint(this);
         g.setColor(POINT_COLOR);
-        g.drawOval((int)mappedLocation.getX()-3, (int)mappedLocation.getY()-3, 6, 6);
+        g.drawOval((int)mappedLocation.getX() - HALF_POINT_RADIUS, (int)mappedLocation.getY() - HALF_POINT_RADIUS, POINT_RADIUS, POINT_RADIUS);
     }
 }
