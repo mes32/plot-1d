@@ -1,11 +1,11 @@
 /*
-    PrimaryAxes.java
+    HorizontalAxis.java
 
     This class is part of the package plot1d
 
  */
 
-package plot1d.graphicElements;
+package plot1d;
 
 import java.io.*;
 import javax.swing.*;
@@ -15,11 +15,11 @@ import plot1d.*;
 
 
 /**
- * This is an extension of JPanel for use by PlotGUI
+ * This represents a horizontal axis drawn on PlotPanel
  */
-public class PrimaryAxes {
+public class HorizontalAxis {
 
-    private static final Color AXES_COLOR = new Color(190, 190, 190);
+    private static final Color AXIS_COLOR = new Color(190, 190, 190);
 
     private int axisX;
     private int axisY;
@@ -29,7 +29,7 @@ public class PrimaryAxes {
     private int minY;
     private int maxY;
 
-    public PrimaryAxes(MappingToGUI trans) {
+    public HorizontalAxis(MappingToGUI trans) {
         axisX = trans.mapX(0);
         axisY = trans.mapY(0);
 
@@ -52,7 +52,7 @@ public class PrimaryAxes {
     }
 
     public void draw(Graphics g) {
-        g.setColor(AXES_COLOR);
+        g.setColor(AXIS_COLOR);
         g.drawLine(axisX, minY, axisX, maxY + minY);
         g.drawLine(minX, axisY, maxX + minX, axisY);
     }

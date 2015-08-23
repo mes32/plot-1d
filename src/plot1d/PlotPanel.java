@@ -11,8 +11,6 @@ import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 
-import plot1d.graphicElements.*;
-
 
 /**
  * This is an extension of JPanel for use by PlotGUI
@@ -45,7 +43,7 @@ public class PlotPanel extends JPanel {
 
         //drawAxesTertiary();
         //drawAxesSecondary();
-        drawAxesPrimary(g, trans);
+        drawAxes(g, trans);
         //drawAxesIncrements();
         drawBorderBox(g, box);
         //drawXLab();
@@ -62,9 +60,9 @@ public class PlotPanel extends JPanel {
         repaint();
     }
 
-    private void drawAxesPrimary(Graphics g, MappingToGUI trans) {
-        PrimaryAxes axes = new PrimaryAxes(trans);
-        axes.draw(g);
+    private void drawAxes(Graphics g, MappingToGUI trans) {
+        HorizontalAxis axis = new HorizontalAxis(trans);
+        axis.draw(g);
     }
 
     private void drawBorderBox(Graphics g, BorderBox box) {
