@@ -21,6 +21,7 @@ public class PlotPanel extends JPanel {
     private static final int HEIGHT = 400;
 
     private DataPoint[] points;
+    private AbstractAxis[] axes;
 
     public PlotPanel(DataPoint[] points) {
 
@@ -38,8 +39,11 @@ public class PlotPanel extends JPanel {
 
     private void drawAll(Graphics g) {
 
+        PointsExtent extent = DataPoint.getExtent(points);
+
         BorderBox box = new BorderBox(getSize());
-        MappingToGUI trans = new MappingToGUI(box, DataPoint.getExtent(points));
+        MappingToGUI trans = new MappingToGUI(box, extent);
+        axes = AbstractAxis.factory(extent, trans);
 
         //drawAxesTertiary();
         //drawAxesSecondary();
@@ -61,20 +65,19 @@ public class PlotPanel extends JPanel {
     }
 
     private void drawAxes(Graphics g, MappingToGUI trans) {
-        HorizontalAxis primaryHorizontalAxis = new HorizontalAxis(trans);
-        VerticalAxis primaryVerticalAxis = new VerticalAxis(trans);
-        primaryHorizontalAxis.draw(g);
-        primaryVerticalAxis.draw(g);
+        if (axes != null) {
+            for (AbstractAxis axis : axes) {
+                axis.draw(g);
+            }
+        }
     }
 
     private void drawBorderBox(Graphics g, BorderBox box) {
-        //BorderBox box = new BorderBox(trans.getGuiMin(), trans.getGuiMax());
         box.draw(g);
     }
 
     private void drawPoints(Graphics g, MappingToGUI trans) {
         for (DataPoint point : points) {
-            //PlotPoint plotPoint = new PlotPoint(point, trans);
             point.draw(g, trans);
         }
     }

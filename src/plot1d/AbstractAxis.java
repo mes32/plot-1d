@@ -19,6 +19,17 @@ import plot1d.*;
  */
 abstract class AbstractAxis {
 
+    public static AbstractAxis[] factory(PointsExtent extent, MappingToGUI trans) {
+
+        HorizontalAxis primaryHorizontalAxis = new HorizontalAxis(trans);
+        VerticalAxis primaryVerticalAxis = new VerticalAxis(trans);
+
+        AbstractAxis[] out = new AbstractAxis[2];
+        out[0] = primaryHorizontalAxis;
+        out[1] = primaryVerticalAxis;
+
+        return out;
+    } 
 
     abstract void draw(Graphics g);
 }

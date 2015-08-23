@@ -37,23 +37,10 @@ public class HorizontalAxis extends AbstractAxis {
         maxX = trans.getBox().getMaxX();
         minY = trans.getBox().getMinY();
         maxY = trans.getBox().getMaxY();
-
-        /*if (axisX < minX) {
-            axisX = minX;
-        } else if (axisX > maxX) {
-            axisX = maxX;
-        }
-
-        if (axisY < minY) {
-            axisY = minY;
-        } else if (axisY > maxY) {
-            axisY = maxY;
-        }*/
     }
 
     public void draw(Graphics g) {
         g.setColor(AXIS_COLOR);
-        //g.drawLine(axisX, minY, axisX, maxY + minY);
         g.drawLine(minX, axisY, maxX + minX, axisY);
     }
 }
