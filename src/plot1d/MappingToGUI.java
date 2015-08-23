@@ -33,7 +33,7 @@ public class MappingToGUI {
     private double dataWidth;
     private double dataHeight;
 
-    public MappingToGUI(BorderBox box, Extent pointsExtent) {
+    public MappingToGUI(BorderBox box, PointsExtent pointsExtent) {
 
         guiMin = box.getMin();
         guiMax = box.getMax();
