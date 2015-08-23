@@ -12,4 +12,4 @@ BUILD_DIR=${PROJECT_DIR}/build/classes/
 
 CLASSPATH=${BUILD_DIR}
 
-java -cp "${CLASSPATH}" Plot1dApp ./test/data/sine.1d
+java -cp "${CLASSPATH}" Plot1dApp ${1}
