@@ -24,9 +24,10 @@ abstract class AbstractAxis {
         HorizontalAxis primaryHorizontalAxis = new PrimaryHorizontalAxis(0.0, trans);
         VerticalAxis primaryVerticalAxis = new VerticalAxis(0.0, trans);
 
-        AbstractAxis[] out = new AbstractAxis[2];
+        AbstractAxis[] out = new AbstractAxis[3];
         out[0] = primaryHorizontalAxis;
         out[1] = primaryVerticalAxis;
+        out[2] = new SecondaryHorizontalAxis(1.0, trans);
 
         return out;
     } 

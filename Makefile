@@ -46,6 +46,7 @@ CLASSES = \
 	$(SRC_PLOT)AbstractAxis.java \
 	$(SRC_PLOT)HorizontalAxis.java \
 	$(SRC_PLOT)PrimaryHorizontalAxis.java \
+	$(SRC_PLOT)SecondaryHorizontalAxis.java \
 	$(SRC_PLOT)VerticalAxis.java \
 
 
