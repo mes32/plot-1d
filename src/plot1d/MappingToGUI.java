@@ -23,6 +23,9 @@ public class MappingToGUI {
     private int guiWidth;
     private int guiHeight;
 
+    private double inputRangeX;
+    private double inputRangeY;
+
     private double dataMinX;
     private double dataMaxX;
     private double dataMinY;
@@ -38,8 +41,8 @@ public class MappingToGUI {
         guiWidth = box.getWidth();
         guiHeight = box.getHeight();
 
-        double inputRangeX = pointsExtent.getMaxX() - pointsExtent.getMinX();
-        double inputRangeY = pointsExtent.getMaxY() - pointsExtent.getMinY();
+        inputRangeX = pointsExtent.getMaxX() - pointsExtent.getMinX();
+        inputRangeY = pointsExtent.getMaxY() - pointsExtent.getMinY();
 
         dataMinX = pointsExtent.getMinX() - 0.05*inputRangeX;
         dataMaxX = pointsExtent.getMaxX() + 0.05*inputRangeX;
@@ -78,7 +81,9 @@ public class MappingToGUI {
 
     public int mapY(double y) {
         double temp = (y - dataMinY) / dataHeight;
-        temp = temp * (double)guiHeight + guiMin.getY();
+        temp = temp * (double)guiHeight + (double)guiMin.getY();
+        temp = 20.0 + (double)guiHeight - (inputRangeY/dataHeight)*temp;
+
         return (int)temp;
     }
 
