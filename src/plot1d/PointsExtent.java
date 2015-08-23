@@ -46,4 +46,12 @@ public class PointsExtent {
         return maxY;
     }
 
+    public double getRangeX() {
+        return maxX - minX;
+    }
+
+    public double getRangeY() {
+        return maxY - minY;
+    }
+
 }

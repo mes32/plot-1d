@@ -59,6 +59,22 @@ public class BorderBox {
         return max;
     }
 
+    public int getMinX() {
+        return minX;
+    }
+
+    public int getMaxX() {
+        return maxX;
+    }
+
+    public int getMinY() {
+        return minY;
+    }
+
+    public int getMaxY() {
+        return maxY;
+    }
+
     public int getWidth() {
         return width;
     }

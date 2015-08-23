@@ -33,12 +33,12 @@ public class PrimaryAxes {
         axisX = trans.mapX(0);
         axisY = trans.mapY(0);
 
-        minX = trans.getGuiMinX();
-        maxX = trans.getGuiMaxX();
-        minY = trans.getGuiMinY();
-        maxY = trans.getGuiMaxY();
+        minX = trans.getBox().getMinX();
+        maxX = trans.getBox().getMaxX();
+        minY = trans.getBox().getMinY();
+        maxY = trans.getBox().getMaxY();
 
-        if (axisX < minX) {
+        /*if (axisX < minX) {
             axisX = minX;
         } else if (axisX > maxX) {
             axisX = maxX;
@@ -48,7 +48,7 @@ public class PrimaryAxes {
             axisY = minY;
         } else if (axisY > maxY) {
             axisY = maxY;
-        }
+        }*/
     }
 
     public void draw(Graphics g) {

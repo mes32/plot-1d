@@ -18,13 +18,10 @@ import java.awt.*;
  */
 public class MappingToGUI {
 
-    private Point guiMin;
-    private Point guiMax;
-    private int guiWidth;
-    private int guiHeight;
+    private static final double DATA_PADDING = 0.05;
 
-    private double inputRangeX;
-    private double inputRangeY;
+    private BorderBox box;
+    private PointsExtent pointsExtent;
 
     private double dataMinX;
     private double dataMaxX;
@@ -35,43 +32,31 @@ public class MappingToGUI {
 
     public MappingToGUI(BorderBox box, PointsExtent pointsExtent) {
 
-        guiMin = box.getMin();
-        guiMax = box.getMax();
+        this.box = box;
+        this.pointsExtent = pointsExtent;
 
-        guiWidth = box.getWidth();
-        guiHeight = box.getHeight();
+        double inputRangeX = pointsExtent.getRangeX();
+        double inputRangeY = pointsExtent.getRangeY();
 
-        inputRangeX = pointsExtent.getMaxX() - pointsExtent.getMinX();
-        inputRangeY = pointsExtent.getMaxY() - pointsExtent.getMinY();
+        double xPad = DATA_PADDING * inputRangeX;
+        double yPad = DATA_PADDING * inputRangeY;
 
-        dataMinX = pointsExtent.getMinX() - 0.05*inputRangeX;
-        dataMaxX = pointsExtent.getMaxX() + 0.05*inputRangeX;
-        dataMinY = pointsExtent.getMinY() - 0.05*inputRangeY;
-        dataMaxY = pointsExtent.getMaxY() + 0.05*inputRangeY;
+        dataMinX = pointsExtent.getMinX() - xPad;
+        dataMaxX = pointsExtent.getMaxX() + xPad;
+        dataMinY = pointsExtent.getMinY() - yPad;
+        dataMaxY = pointsExtent.getMaxY() + yPad;
 
         dataWidth = dataMaxX - dataMinX;
         dataHeight = dataMaxY - dataMinY;
     }
 
-    public int getGuiMinX() {
-        return (int)guiMin.getX();
-    }
-
-    public int getGuiMaxX() {
-        return (int)guiMax.getX();
-    }
-
-    public int getGuiMinY() {
-        return (int)guiMin.getY();
-    }
-
-    public int getGuiMaxY() {
-        return (int)guiMax.getY();
+    public BorderBox getBox() {
+        return box;
     }
 
     public int mapX(double x) {
         double temp = (x - dataMinX) / dataWidth;
-        temp = temp * (double)guiWidth + guiMin.getX();
+        temp = temp * (double)box.getWidth() + (double)box.getMinX();
         return (int)temp;
     }
 
@@ -81,8 +66,10 @@ public class MappingToGUI {
 
     public int mapY(double y) {
         double temp = (y - dataMinY) / dataHeight;
-        temp = temp * (double)guiHeight + (double)guiMin.getY();
-        temp = 20.0 + (double)guiHeight - (inputRangeY/dataHeight)*temp;
+        temp = temp * (double)box.getHeight() + (double)box.getMinY();
+        temp = 20.0 + (double)box.getHeight() - 0.90*temp;
+
+        // *** This is only approximately correct
 
         return (int)temp;
     }
