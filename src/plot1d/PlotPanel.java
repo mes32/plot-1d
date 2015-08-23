@@ -61,8 +61,10 @@ public class PlotPanel extends JPanel {
     }
 
     private void drawAxes(Graphics g, MappingToGUI trans) {
-        HorizontalAxis axis = new HorizontalAxis(trans);
-        axis.draw(g);
+        HorizontalAxis primaryHorizontalAxis = new HorizontalAxis(trans);
+        VerticalAxis primaryVerticalAxis = new VerticalAxis(trans);
+        primaryHorizontalAxis.draw(g);
+        primaryVerticalAxis.draw(g);
     }
 
     private void drawBorderBox(Graphics g, BorderBox box) {

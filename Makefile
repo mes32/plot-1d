@@ -43,7 +43,9 @@ CLASSES = \
 	$(SRC_PLOT)BorderBox.java \
 	$(SRC_PLOT)MappingToGUI.java \
 	$(SRC_PLOT)PointsExtent.java \
+	$(SRC_PLOT)AbstractAxis.java \
 	$(SRC_PLOT)HorizontalAxis.java \
+	$(SRC_PLOT)VerticalAxis.java \
 
 
 # Set the default make target

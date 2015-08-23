@@ -1,5 +1,5 @@
 /*
-    HorizontalAxis.java
+    VerticalAxis.java
 
     This class is part of the package plot1d
 
@@ -15,9 +15,9 @@ import plot1d.*;
 
 
 /**
- * This represents a horizontal axis drawn on PlotPanel
+ * This represents a vertical axis drawn on PlotPanel
  */
-public class HorizontalAxis extends AbstractAxis {
+public class VerticalAxis extends AbstractAxis {
 
     private static final Color AXIS_COLOR = new Color(190, 190, 190);
 
@@ -29,7 +29,7 @@ public class HorizontalAxis extends AbstractAxis {
     private int minY;
     private int maxY;
 
-    public HorizontalAxis(MappingToGUI trans) {
+    public VerticalAxis(MappingToGUI trans) {
         axisX = trans.mapX(0);
         axisY = trans.mapY(0);
 
@@ -53,8 +53,8 @@ public class HorizontalAxis extends AbstractAxis {
 
     public void draw(Graphics g) {
         g.setColor(AXIS_COLOR);
-        //g.drawLine(axisX, minY, axisX, maxY + minY);
-        g.drawLine(minX, axisY, maxX + minX, axisY);
+        g.drawLine(axisX, minY, axisX, maxY + minY);
+        //g.drawLine(minX, axisY, maxX + minX, axisY);
     }
 }
 
