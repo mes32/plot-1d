@@ -17,9 +17,7 @@ import plot1d.*;
 /**
  * This represents a vertical axis drawn on PlotPanel
  */
-public class VerticalAxis extends AbstractAxis {
-
-    private static final Color AXIS_COLOR = new Color(190, 190, 190);
+abstract class VerticalAxis extends AbstractAxis {
 
     private int axisX;
 
@@ -37,8 +35,10 @@ public class VerticalAxis extends AbstractAxis {
         maxY = trans.getBox().getMaxY();
     }
 
+    abstract Color getColor();
+
     public void draw(Graphics g) {
-        g.setColor(AXIS_COLOR);
+        g.setColor(this.getColor());
         g.drawLine(axisX, minY, axisX, maxY + minY);
     }
 }

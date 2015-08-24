@@ -54,4 +54,20 @@ public class PointsExtent {
         return maxY - minY;
     }
 
+    public boolean containsX(double x) {
+        if (x > maxX || x < minX) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public boolean containsY(double y) {
+        if (y > maxY || y < minY) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }

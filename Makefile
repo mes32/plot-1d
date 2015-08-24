@@ -48,6 +48,8 @@ CLASSES = \
 	$(SRC_PLOT)PrimaryHorizontalAxis.java \
 	$(SRC_PLOT)SecondaryHorizontalAxis.java \
 	$(SRC_PLOT)VerticalAxis.java \
+	$(SRC_PLOT)PrimaryVerticalAxis.java \
+	$(SRC_PLOT)SecondaryVerticalAxis.java \
 
 
 # Set the default make target
