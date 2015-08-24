@@ -67,7 +67,7 @@ public class MappingToGUI {
     public int mapY(double y) {
         double temp = (y - dataMinY) / dataHeight;
         temp = temp * (double)box.getHeight() + (double)box.getMinY();
-        temp = 20.0 + (double)box.getHeight() - 0.90*temp;
+        temp = 10.0 + (double)box.getHeight() - 0.90*temp;
 
         // *** This is only approximately correct
 
