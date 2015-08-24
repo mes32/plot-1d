@@ -19,7 +19,7 @@ import plot1d.*;
  */
 public class PrimaryVerticalAxis extends VerticalAxis {
 
-    private static final Color AXIS_COLOR = new Color(190, 190, 190);
+    private static final Color AXIS_COLOR = new Color(170, 170, 170);
 
     public PrimaryVerticalAxis(double y, MappingToGUI trans) {
         super(y, trans);

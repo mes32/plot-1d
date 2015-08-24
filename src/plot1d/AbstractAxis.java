@@ -63,7 +63,7 @@ abstract class AbstractAxis {
     }
 
     private static double getInterval(double range) {
-        double roughInterval = range / 4.0;
+        double roughInterval = range / 6.0;
         int ex = (int)(Math.log10(roughInterval) - 1.0);
         double interval1to10 = roughInterval / (10^ex);
 
