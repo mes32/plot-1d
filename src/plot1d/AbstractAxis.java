@@ -65,9 +65,20 @@ abstract class AbstractAxis {
     private static double getInterval(double range) {
         double roughInterval = range / 4.0;
         int ex = (int)(Math.log10(roughInterval) - 1.0);
-        double interval1to10 = roughInterval / (10^ex);
+        double scaleFactor = Math.pow(10, ex);
+        double regularInterval = roughInterval / scaleFactor;
 
-        return roughInterval;
+        if (regularInterval > 1.0 && regularInterval < 2.0) {
+            regularInterval = 1.0;
+        } else if (regularInterval > 2.0 && regularInterval < 2.5) {
+            regularInterval = 2.0;
+        } else if (regularInterval > 2.5 && regularInterval < 5.0) {
+            regularInterval = 2.5;
+        } else if (regularInterval > 5.0 && regularInterval < 10.0) {
+            regularInterval = 5.0;
+        }
+
+        return regularInterval * scaleFactor;
     }
 
     abstract void draw(Graphics g);
