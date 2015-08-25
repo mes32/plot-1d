@@ -19,7 +19,7 @@ public class DataPoint {
 
     private static final int POINT_RADIUS = 6;
     private static final int HALF_POINT_RADIUS = POINT_RADIUS / 2;
-    private static final Color POINT_COLOR = new Color (50, 50, 255);
+    private static final Color POINT_COLOR = new Color (0, 127, 255);
 
     private double x;
     private double y;
