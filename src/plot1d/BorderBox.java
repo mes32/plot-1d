@@ -18,6 +18,10 @@ import java.awt.*;
 public class BorderBox {
 
     private static final Color BORDER_COLOR = Color.black;
+    private static final int MARGIN_TOP = 10;
+    private static final int MARGIN_BOTTOM = 80;
+    private static final int MARGIN_LEFT = 80;
+    private static final int MARGIN_RIGHT = 10;
 
     private int height;
     private int width;
@@ -34,16 +38,11 @@ public class BorderBox {
         int panelWidth = (int)panelSize.getWidth();
         int panelHeight = (int)panelSize.getHeight();
 
-        int marginTop = 10;
-        int marginBottom = 100;
-        int marginLeft = 80;
-        int marginRight = 10;
+        width = panelWidth - MARGIN_RIGHT - MARGIN_LEFT;
+        height = panelHeight - MARGIN_TOP - MARGIN_BOTTOM;
 
-        width = panelWidth - marginRight - marginLeft;
-        height = panelHeight - marginTop - marginBottom;
-
-        min = new Point(marginLeft, marginTop);
-        max = new Point(panelWidth - marginRight - marginLeft, panelHeight - marginTop - marginBottom);
+        min = new Point(MARGIN_LEFT, MARGIN_TOP);
+        max = new Point(panelWidth - MARGIN_RIGHT - MARGIN_LEFT, panelHeight - MARGIN_TOP - MARGIN_BOTTOM);
 
         minX = (int)min.getX();
         minY = (int)min.getY();
