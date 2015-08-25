@@ -30,6 +30,19 @@ public class RegionExtent {
         this.maxY = maxY;
     }
 
+    public RegionExtent(RegionExtent input, double expansionFactor) {
+        double inputRangeX = input.getRangeX();
+        double inputRangeY = input.getRangeY();
+
+        double xPadding = expansionFactor * inputRangeX;
+        double yPadding = expansionFactor * inputRangeY;
+
+        this.minX = input.getMinX() - xPadding;
+        this.maxX = input.getMaxX() + xPadding;
+        this.minY = input.getMinY() - yPadding;
+        this.maxY = input.getMaxY() + yPadding;
+    }
+
     public double getMinX() {
         return minX;
     }
