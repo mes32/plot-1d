@@ -19,7 +19,7 @@ import plot1d.*;
  */
 public class SecondaryVerticalAxis extends VerticalAxis {
 
-    private static final Color AXIS_COLOR = new Color(230, 230, 230);
+    private static final Color AXIS_COLOR = new Color(240, 240, 240);
 
     public SecondaryVerticalAxis(double y, MappingToGUI trans) {
         super(y, trans);
