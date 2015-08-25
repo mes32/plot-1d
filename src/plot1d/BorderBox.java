@@ -35,7 +35,7 @@ public class BorderBox {
         int panelHeight = (int)panelSize.getHeight();
 
         int marginTop = 10;
-        int marginBottom = 80;
+        int marginBottom = 100;
         int marginLeft = 80;
         int marginRight = 10;
 

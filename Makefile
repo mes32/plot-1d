@@ -42,7 +42,7 @@ CLASSES = \
 	$(SRC_PLOT)DataPoint.java \
 	$(SRC_PLOT)BorderBox.java \
 	$(SRC_PLOT)MappingToGUI.java \
-	$(SRC_PLOT)PointsExtent.java \
+	$(SRC_PLOT)RegionExtent.java \
 	$(SRC_PLOT)AbstractAxis.java \
 	$(SRC_PLOT)HorizontalAxis.java \
 	$(SRC_PLOT)PrimaryHorizontalAxis.java \

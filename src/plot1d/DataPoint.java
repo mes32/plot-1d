@@ -37,9 +37,9 @@ public class DataPoint {
         return y;
     }
 
-    public static PointsExtent getExtent(DataPoint[] points) {
+    public static RegionExtent getExtent(DataPoint[] points) {
         if (points.length == 0) {
-            return new PointsExtent(0, 0, 0, 0);
+            return new RegionExtent(0, 0, 0, 0);
         }
 
         double minX = points[0].getX();
@@ -63,7 +63,7 @@ public class DataPoint {
                 maxY = y;
             }
         }
-        return new PointsExtent(minX, minY, maxX, maxY);
+        return new RegionExtent(minX, minY, maxX, maxY);
     }
 
     public void draw(Graphics g, MappingToGUI trans) {

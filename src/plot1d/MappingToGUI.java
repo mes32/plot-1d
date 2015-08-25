@@ -21,7 +21,7 @@ public class MappingToGUI {
     private static final double DATA_PADDING = 0.05;
 
     private BorderBox box;
-    private PointsExtent pointsExtent;
+    private RegionExtent regionExtent;
 
     private double dataMinX;
     private double dataMaxX;
@@ -30,21 +30,21 @@ public class MappingToGUI {
     private double dataWidth;
     private double dataHeight;
 
-    public MappingToGUI(BorderBox box, PointsExtent pointsExtent) {
+    public MappingToGUI(BorderBox box, RegionExtent regionExtent) {
 
         this.box = box;
-        this.pointsExtent = pointsExtent;
+        this.regionExtent = regionExtent;
 
-        double inputRangeX = pointsExtent.getRangeX();
-        double inputRangeY = pointsExtent.getRangeY();
+        double inputRangeX = regionExtent.getRangeX();
+        double inputRangeY = regionExtent.getRangeY();
 
         double xPad = DATA_PADDING * inputRangeX;
         double yPad = DATA_PADDING * inputRangeY;
 
-        dataMinX = pointsExtent.getMinX() - xPad;
-        dataMaxX = pointsExtent.getMaxX() + xPad;
-        dataMinY = pointsExtent.getMinY() - yPad;
-        dataMaxY = pointsExtent.getMaxY() + yPad;
+        dataMinX = regionExtent.getMinX() - xPad;
+        dataMaxX = regionExtent.getMaxX() + xPad;
+        dataMinY = regionExtent.getMinY() - yPad;
+        dataMaxY = regionExtent.getMaxY() + yPad;
 
         dataWidth = dataMaxX - dataMinX;
         dataHeight = dataMaxY - dataMinY;

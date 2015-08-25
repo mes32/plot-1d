@@ -1,5 +1,5 @@
 /*
-    PointsExtent.java - plot-1d
+    RegionExtent.java - plot-1d
 
     This class is part of the package plot1d
 
@@ -16,14 +16,14 @@ import java.awt.*;
  * This represents a 2-dimensional point. A single sample from a 1-dimensional dataset. See 
  * DataField.java.
  */
-public class PointsExtent {
+public class RegionExtent {
 
     private double minX;
     private double minY;
     private double maxX;
     private double maxY;
 
-    public PointsExtent(double minX, double minY, double maxX, double maxY) {
+    public RegionExtent(double minX, double minY, double maxX, double maxY) {
         this.minX = minX;
         this.minY = minY;
         this.maxX = maxX;

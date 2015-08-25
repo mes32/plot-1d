@@ -39,7 +39,7 @@ public class PlotPanel extends JPanel {
 
     private void drawAll(Graphics g) {
 
-        PointsExtent extent = DataPoint.getExtent(points);
+        RegionExtent extent = DataPoint.getExtent(points);
 
         BorderBox box = new BorderBox(getSize());
         MappingToGUI trans = new MappingToGUI(box, extent);
