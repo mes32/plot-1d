@@ -4,14 +4,14 @@
 Generate scatter plots from formatted text files
 
 ## Usage
-The shell script plot-1d.sh launches the application. It takes a single text file as input.
+Launch the application using the shell script `plot-1d.sh`. This script takes a single text file as input.
 
 ```
 cd ./plot-1d
 ./plot-1d.sh <data.1d>
 ```
 
-The input data file should contain two columns of numbers separated by a space. The first column gives x-axis values and the second column gives the corresponding y-axis value. For example a file containing the following represents a few data points on the line `y = 2x + 1` for the x values equal to 0, 1, 2, 3, 4.
+The input data file should contain two columns of numbers separated by a space. The first column gives x-axis values and the second column gives the corresponding y-axis value. For example a text file containing the following represents a few data points on the line `y = 2x + 1` for the x values equal to {0, 1, 2, 3, 4}.
 
 ```
 0 1
@@ -32,7 +32,7 @@ You can find sample input files under `./test/data`.
 # Plots a square wave
 ./plot-1d.sh ./test/data/square_wave.1d
 
-# Plots the price of diamonds versus mass for a sample of 50,000 diamonds
+# Plots the price of diamonds versus mass for a sample of more than 50,000 diamonds
 # x: price of diamond in US dollars
 # y: mass in carats
 ./plot-1d.sh ./test/data/diamonds.1d
@@ -44,7 +44,7 @@ You can find sample input files under `./test/data`.
 ```
 
 ## Requirements
-To run you will need Java 7 JRE runtime environment. To develop you will need Java 7 JDK development kit and you will probably find make useful.
+To run you will need Java 7 JRE runtime environment or later. To develop you will need Java 7 JDK development kit and you will probably find make useful.
 
 ## Licence
 Copyright 2015 Michael Stockman
