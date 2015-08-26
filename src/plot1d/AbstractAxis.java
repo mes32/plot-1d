@@ -22,7 +22,8 @@ abstract class AbstractAxis {
 
     public static AbstractAxis[] factory(MappingToGUI trans) {
 
-        RegionExtent extent = trans.getPlotExtent();
+        RegionExtent extent = trans.getDataExtent();
+        RegionExtent plotExtent = trans.getPlotExtent();
 
         double intervalX = getInterval(extent.getRangeX());
         double intervalY = getInterval(extent.getRangeY());
@@ -33,15 +34,17 @@ abstract class AbstractAxis {
             PrimaryVerticalAxis primaryVerticalAxis = new PrimaryVerticalAxis(0.0, trans);
             outList.add(primaryVerticalAxis);
 
-            for (int i=1; i*intervalX <= extent.getMaxX(); i++) {
+            for (int i=1; i*intervalX <= plotExtent.getMaxX(); i++) {
                 outList.add(new SecondaryVerticalAxis(i*intervalX, trans));
             }
-            for (int i=-1; i*intervalX >= extent.getMinX(); i--) {
+            for (int i=-1; i*intervalX >= plotExtent.getMinX(); i--) {
                 outList.add(new SecondaryVerticalAxis(i*intervalX, trans));
             }
         } else {
-            for (int i=0; i*intervalX + extent.getMinX() <= extent.getMaxX(); i++) {
-                outList.add(new SecondaryVerticalAxis(i*intervalX + extent.getMinX(), trans));
+            for (int i=0; i*intervalX <= plotExtent.getMaxX(); i++) {
+                if (i*intervalX >= plotExtent.getMinX()) {
+                    outList.add(new SecondaryVerticalAxis(i*intervalX, trans));
+                }
             }
         }
 
@@ -49,15 +52,17 @@ abstract class AbstractAxis {
             PrimaryHorizontalAxis primaryHorizontalAxis = new PrimaryHorizontalAxis(0.0, trans);
             outList.add(primaryHorizontalAxis);
 
-            for (int i=1; i*intervalY <= extent.getMaxY(); i++) {
+            for (int i=1; i*intervalY <= plotExtent.getMaxY(); i++) {
                 outList.add(new SecondaryHorizontalAxis(i*intervalY, trans));
             }
-            for (int i=-1; i*intervalY >= extent.getMinY(); i--) {
+            for (int i=-1; i*intervalY >= plotExtent.getMinY(); i--) {
                 outList.add(new SecondaryHorizontalAxis(i*intervalY, trans));
             }
         } else {
-            for (int i=0; i*intervalY + extent.getMinY() <= extent.getMaxY(); i++) {
-                outList.add(new SecondaryHorizontalAxis(i*intervalY + extent.getMinY(), trans));
+            for (int i=0; i*intervalY <= plotExtent.getMaxY(); i++) {
+                if (i*intervalY >= plotExtent.getMinY()) {
+                    outList.add(new SecondaryHorizontalAxis(i*intervalY, trans));
+                }
             }
         }
 

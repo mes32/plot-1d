@@ -59,6 +59,10 @@ public class MappingToGUI {
         return new Point(mapX(point.getX()), mapY(point.getY()));
     }
 
+    public RegionExtent getDataExtent() {
+        return dataExtent;
+    }
+
     public RegionExtent getPlotExtent() {
         return plotExtent;
     }
