@@ -68,5 +68,5 @@ classes: $(CLASSES)
 
 # Set the clean behavior
 clean:
-	rm $(BUILD)*.class
+	rm $(BUILD)*.class ; rm $(BUILD)plot1d/*.class
 
