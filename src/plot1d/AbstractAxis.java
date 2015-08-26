@@ -71,7 +71,7 @@ abstract class AbstractAxis {
 
     private static double getInterval(double range) {
         double roughInterval = range / 4.0;
-        int ex = (int)(Math.log10(roughInterval) - 1.0);
+        int ex = (int)(Math.ceil(Math.log10(roughInterval))) - 1;
         double scaleFactor = Math.pow(10, ex);
         double regularInterval = roughInterval / scaleFactor;
 
