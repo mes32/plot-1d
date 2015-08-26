@@ -43,12 +43,9 @@ public class PlotPanel extends JPanel {
 
         BorderBox box = new BorderBox(getSize());
         MappingToGUI trans = new MappingToGUI(box, extent);
-        axes = AbstractAxis.factory(extent, trans);
+        axes = AbstractAxis.factory(trans);
 
-        //drawAxesTertiary();
-        //drawAxesSecondary();
         drawAxes(g, trans);
-        //drawAxesIncrements();
         drawBorderBox(g, box);
         //drawXLab();
         //drawYLab();

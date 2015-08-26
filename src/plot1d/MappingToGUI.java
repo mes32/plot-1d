@@ -57,6 +57,10 @@ public class MappingToGUI {
 
     public Point mapPoint(DataPoint point) {
         return new Point(mapX(point.getX()), mapY(point.getY()));
-    } 
+    }
+
+    public RegionExtent getPlotExtent() {
+        return plotExtent;
+    }
 }
 

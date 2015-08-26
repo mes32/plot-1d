@@ -20,7 +20,9 @@ import plot1d.*;
  */
 abstract class AbstractAxis {
 
-    public static AbstractAxis[] factory(RegionExtent extent, MappingToGUI trans) {
+    public static AbstractAxis[] factory(MappingToGUI trans) {
+
+        RegionExtent extent = trans.getPlotExtent();
 
         double intervalX = getInterval(extent.getRangeX());
         double intervalY = getInterval(extent.getRangeY());
