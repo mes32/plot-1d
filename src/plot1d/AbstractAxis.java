@@ -7,8 +7,6 @@
 
 package plot1d;
 
-import java.io.*;
-import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 
@@ -71,7 +69,7 @@ abstract class AbstractAxis {
 
     private static double getInterval(double range) {
         double roughInterval = range / 4.0;
-        int ex = (int)(Math.ceil(Math.log10(roughInterval))) - 1;
+        double ex = Math.ceil(Math.log10(roughInterval)) - 1.0;
         double scaleFactor = Math.pow(10, ex);
         double regularInterval = roughInterval / scaleFactor;
 
