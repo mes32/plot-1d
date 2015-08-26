@@ -5,7 +5,7 @@
  *
  */
 
-package plot1d;
+package plot1d.data;
 
 import java.io.*;
 import java.util.*;

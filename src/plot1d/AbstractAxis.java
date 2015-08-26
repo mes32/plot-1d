@@ -10,7 +10,7 @@ package plot1d;
 import java.awt.*;
 import java.util.*;
 
-import plot1d.*;
+import plot1d.data.*;
 
 
 /**

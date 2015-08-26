@@ -11,6 +11,8 @@ import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 
+import plot1d.data.*;
+
 
 /**
  * This is an extension of JPanel for use by PlotGUI

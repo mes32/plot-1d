@@ -5,10 +5,12 @@
 
  */
 
-package plot1d;
+package plot1d.data;
 
 import java.io.*;
 import java.awt.*;
+
+import plot1d.MappingToGUI;
 
 
 /**
@@ -66,9 +68,12 @@ public class DataPoint {
         return new RegionExtent(minX, minY, maxX, maxY);
     }
 
-    public void draw(Graphics g, MappingToGUI trans) {
-        Point mappedLocation = trans.mapPoint(this);
+    public void draw(Graphics g, plot1d.MappingToGUI trans) {
+
+        int x = trans.mapX(this.x);
+        int y = trans.mapY(this.y);
+
         g.setColor(POINT_COLOR);
-        g.drawOval((int)mappedLocation.getX() - HALF_POINT_RADIUS, (int)mappedLocation.getY() - HALF_POINT_RADIUS, POINT_RADIUS, POINT_RADIUS);
+        g.drawOval(x - HALF_POINT_RADIUS, y - HALF_POINT_RADIUS, POINT_RADIUS, POINT_RADIUS);
     }
 }

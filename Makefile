@@ -8,7 +8,7 @@
 # Define project directory variables
 SRC = ./src/
 SRC_PLOT = ./src/plot1d/
-SRC_GRAPHICS = ./src/plot1d/graphicElements/
+SRC_DATA = ./src/plot1d/data/
 
 BUILD = ./build/classes/
 
@@ -37,12 +37,8 @@ CLASSES = \
 	$(SRC_PLOT)PlotGUI.java \
 	$(SRC_PLOT)PlotFrame.java \
 	$(SRC_PLOT)PlotPanel.java \
-	$(SRC_PLOT)DataSet.java \
-	$(SRC_PLOT)DataField.java \
-	$(SRC_PLOT)DataPoint.java \
 	$(SRC_PLOT)BorderBox.java \
 	$(SRC_PLOT)MappingToGUI.java \
-	$(SRC_PLOT)RegionExtent.java \
 	$(SRC_PLOT)AbstractAxis.java \
 	$(SRC_PLOT)HorizontalAxis.java \
 	$(SRC_PLOT)PrimaryHorizontalAxis.java \
@@ -50,6 +46,10 @@ CLASSES = \
 	$(SRC_PLOT)VerticalAxis.java \
 	$(SRC_PLOT)PrimaryVerticalAxis.java \
 	$(SRC_PLOT)SecondaryVerticalAxis.java \
+	$(SRC_DATA)DataSet.java \
+	$(SRC_DATA)DataField.java \
+	$(SRC_DATA)DataPoint.java \
+	$(SRC_DATA)RegionExtent.java \
 
 
 # Set the default make target
@@ -68,5 +68,5 @@ classes: $(CLASSES)
 
 # Set the clean behavior
 clean:
-	rm $(BUILD)*.class ; rm $(BUILD)plot1d/*.class
+	rm $(BUILD)*.class ; rm $(BUILD)plot1d/*.class ; rm rm $(BUILD)plot1d/data/*.class
 

@@ -9,6 +9,8 @@ package plot1d;
 
 import java.io.*;
 
+import plot1d.data.*;
+
 
 /**
  * This class parses the input arguments and packages them into an object for use by the other 

@@ -11,6 +11,7 @@ import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 
+import plot1d.data.*;
 
 
 /**
@@ -53,10 +54,6 @@ public class MappingToGUI {
 
     public int mapY(int y) {
         return mapY((double)y);
-    }
-
-    public Point mapPoint(DataPoint point) {
-        return new Point(mapX(point.getX()), mapY(point.getY()));
     }
 
     public RegionExtent getDataExtent() {
