@@ -25,26 +25,22 @@ abstract class VerticalAxis extends AbstractAxis {
     private int axisX;
     private String label;
 
-    private int minX;
-    private int maxX;
-    private int minY;
-    private int maxY;
+    private int top;
+    private int bottom;
 
     public VerticalAxis(double x, MappingToGUI trans) {
         axisX = trans.mapX(x);
         label = String.valueOf(x);
 
-        minX = trans.getBox().getMinX();
-        maxX = trans.getBox().getMaxX();
-        minY = trans.getBox().getMinY();
-        maxY = trans.getBox().getMaxY();
+        top = trans.getBox().getTop();
+        bottom = trans.getBox().getBottom();
     }
 
     abstract Color getColor();
 
     public void draw(Graphics g) {
         g.setColor(this.getColor());
-        g.drawLine(axisX, minY, axisX, maxY + minY);
+        g.drawLine(axisX, top, axisX, bottom);
 
         g.setColor(LABEL_COLOR);
         g.setFont(LABEL_FONT);
@@ -52,7 +48,7 @@ abstract class VerticalAxis extends AbstractAxis {
         int width = metric.stringWidth(label);
         int height = metric.getAscent();
         int x = axisX - (width / 2);
-        int y = maxY + (height / 2) + 25;
+        int y = bottom + (height / 2) + 25;
         g.drawString(label, x, y);
     }
 }

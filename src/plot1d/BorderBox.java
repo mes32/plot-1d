@@ -23,16 +23,11 @@ public class BorderBox {
     private static final int MARGIN_LEFT = 80;
     private static final int MARGIN_RIGHT = 10;
 
+    private int x;
+    private int y;
+
     private int height;
     private int width;
-
-    private Point min;
-    private Point max;
-
-    private int minX;
-    private int minY;
-    private int maxX;
-    private int maxY;
 
     public BorderBox(Dimension panelSize) {
         int panelWidth = (int)panelSize.getWidth();
@@ -41,37 +36,8 @@ public class BorderBox {
         width = panelWidth - MARGIN_RIGHT - MARGIN_LEFT;
         height = panelHeight - MARGIN_TOP - MARGIN_BOTTOM;
 
-        min = new Point(MARGIN_LEFT, MARGIN_TOP);
-        max = new Point(panelWidth - MARGIN_RIGHT - MARGIN_LEFT, panelHeight - MARGIN_TOP - MARGIN_BOTTOM);
-
-        minX = (int)min.getX();
-        minY = (int)min.getY();
-        maxX = (int)max.getX();
-        maxY = (int)max.getY();
-    }
-
-    public Point getMin() {
-        return min;
-    }
-
-    public Point getMax() {
-        return max;
-    }
-
-    public int getMinX() {
-        return minX;
-    }
-
-    public int getMaxX() {
-        return maxX;
-    }
-
-    public int getMinY() {
-        return minY;
-    }
-
-    public int getMaxY() {
-        return maxY;
+        x = MARGIN_LEFT;
+        y = MARGIN_TOP;
     }
 
     public int getWidth() {
@@ -82,9 +48,25 @@ public class BorderBox {
         return height;
     }
 
+    public int getTop() {
+        return y;
+    }
+
+    public int getBottom() {
+        return y + height;
+    }
+
+    public int getLeft() {
+        return x;
+    }
+
+    public int getRight() {
+        return x + width;
+    }
+
     public void draw(Graphics g) {
         g.setColor(BORDER_COLOR);
-        g.drawRect(minX, minY, maxX, maxY);
+        g.drawRect(x, y, width, height);
     }
 }
 

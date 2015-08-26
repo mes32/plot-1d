@@ -25,19 +25,15 @@ abstract class HorizontalAxis extends AbstractAxis {
     private int axisY;
     private String label;
 
-    private int minX;
-    private int maxX;
-    private int minY;
-    private int maxY;
+    private int left;
+    private int right;
 
     public HorizontalAxis(double y, MappingToGUI trans) {
         axisY = trans.mapY(y);
         label = String.valueOf(y);
 
-        minX = trans.getBox().getMinX();
-        maxX = trans.getBox().getMaxX();
-        minY = trans.getBox().getMinY();
-        maxY = trans.getBox().getMaxY();
+        left = trans.getBox().getLeft();
+        right = trans.getBox().getRight();
     }
 
 
@@ -45,14 +41,14 @@ abstract class HorizontalAxis extends AbstractAxis {
 
     public void draw(Graphics g) {
         g.setColor(this.getColor());
-        g.drawLine(minX, axisY, maxX + minX, axisY);
+        g.drawLine(left, axisY, right, axisY);
 
         g.setColor(LABEL_COLOR);
         g.setFont(LABEL_FONT);
         FontMetrics metric = g.getFontMetrics(LABEL_FONT);
         int width = metric.stringWidth(label);
         int height = metric.getAscent();
-        int x = minX - 8 - width;
+        int x = left - 8 - width;
         int y = axisY + (height / 2) - 1;
         g.drawString(label, x, y);
     }

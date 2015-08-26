@@ -36,7 +36,7 @@ public class MappingToGUI {
 
     public int mapX(double x) {
         double temp = (x - plotExtent.getMinX()) / plotExtent.getRangeX();
-        temp = temp * (double)box.getWidth() + (double)box.getMinX();
+        temp = temp * (double)box.getWidth() + (double)box.getLeft();
         return (int)temp;
     }
 
@@ -46,11 +46,8 @@ public class MappingToGUI {
 
     public int mapY(double y) {
         double temp = (y - plotExtent.getMinY()) / plotExtent.getRangeY();
-        temp = temp * (double)box.getHeight() + (double)box.getMinY();
-        temp = 10.0 + (double)box.getHeight() - 0.90*temp;
-
-        // *** This is only approximately correct
-
+        temp = temp * (double)box.getHeight();
+        temp = (double)box.getBottom() - temp;
         return (int)temp;
     }
 
