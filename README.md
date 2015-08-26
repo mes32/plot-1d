@@ -6,22 +6,22 @@ Generates scatter plots from formatted text files.
 ## Usage
 The shell script plot-1d.sh launches the application.
 
-`cd ./plot-1d`
-`./plot-1d.sh <data.1d>`
+```cd ./plot-1d
+./plot-1d.sh <data.1d>
+```
 
-The input data file should contain two columns of numbers separated by a space. The first column gives x-axis values and the second column gives the corresponding y-axis value. For example a file containing the following represents a few data points on the line y = 2x + 1 for the x values 0, 1, 2, 3, 4.
+The input data file should contain two columns of numbers separated by a space. The first column gives x-axis values and the second column gives the corresponding y-axis value. For example a file containing the following represents a few data points on the line `y = 2x + 1` for the x values 0, 1, 2, 3, 4.
 
-`
-0 1
+```0 1
 1 3
 2 5
 3 7
 4 9
-`
+```
 
 You can find some example input files under ./test/data.
 
-`
+```
 # Plots a sine function
 ./plot-1d.sh ./test/data/sine.1d 
 
@@ -37,7 +37,7 @@ You can find some example input files under ./test/data.
 # x: child height in inches
 # y: average of parents height in inches
 ./plot-1d.sh ./test/data/galton.1d
-`
+```
 
 ## Requirements
 This program was devoloped using Java 7 and make.
