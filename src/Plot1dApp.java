@@ -8,6 +8,7 @@
 import java.io.*;
 
 import plot1d.*;
+import plot1d.data.*;
 
 public class Plot1dApp {
     public static void main(String[] args) {

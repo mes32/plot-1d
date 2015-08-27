@@ -10,6 +10,8 @@ package plot1d;
 import java.io.*;
 import javax.swing.*;
 
+import plot1d.data.*;
+
 /**
  * This is the main plot-1d GUI in which the results of plotting will be displayed
  */

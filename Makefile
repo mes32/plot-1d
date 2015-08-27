@@ -33,7 +33,7 @@ JC = javac
 # List each java source code file that needs to be compiled into a class file
 CLASSES = \
 	$(SRC)Plot1dApp.java \
-	$(SRC_PLOT)InputObject.java \
+	$(SRC_DATA)InputObject.java \
 	$(SRC_PLOT)PlotGUI.java \
 	$(SRC_PLOT)PlotFrame.java \
 	$(SRC_PLOT)PlotPanel.java \
@@ -68,5 +68,5 @@ classes: $(CLASSES)
 
 # Set the clean behavior
 clean:
-	rm $(BUILD)*.class ; rm $(BUILD)plot1d/*.class ; rm rm $(BUILD)plot1d/data/*.class
+	rm $(BUILD)*.class ; rm $(BUILD)plot1d/*.class ; rm $(BUILD)plot1d/data/*.class
 
