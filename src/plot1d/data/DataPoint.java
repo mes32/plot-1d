@@ -10,7 +10,7 @@ package plot1d.data;
 import java.io.*;
 import java.awt.*;
 
-import plot1d.MappingToGUI;
+import plot1d.gui.*;
 
 
 /**
@@ -68,7 +68,7 @@ public class DataPoint {
         return new RegionExtent(minX, minY, maxX, maxY);
     }
 
-    public void draw(Graphics g, plot1d.MappingToGUI trans) {
+    public void draw(Graphics g, MappingToGUI trans) {
 
         int x = trans.mapX(this.x);
         int y = trans.mapY(this.y);

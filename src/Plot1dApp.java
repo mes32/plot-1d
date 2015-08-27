@@ -9,6 +9,7 @@ import java.io.*;
 
 import plot1d.*;
 import plot1d.data.*;
+import plot1d.gui.*;
 
 public class Plot1dApp {
     public static void main(String[] args) {

@@ -1,11 +1,11 @@
 /*
-    PrimaryHorizontalAxis.java
+    PrimaryVerticalAxis.java
 
     This class is part of the package plot1d
 
  */
 
-package plot1d;
+package plot1d.gui;
 
 import java.io.*;
 import javax.swing.*;
@@ -15,13 +15,13 @@ import plot1d.*;
 
 
 /**
- * This represents a primary horizontal axis drawn on PlotPanel
+ * This represents a primary vertical axis drawn on PlotPanel
  */
-public class PrimaryHorizontalAxis extends HorizontalAxis {
+public class PrimaryVerticalAxis extends VerticalAxis {
 
     private static final Color AXIS_COLOR = new Color(100, 100, 100);
 
-    public PrimaryHorizontalAxis(double y, MappingToGUI trans) {
+    public PrimaryVerticalAxis(double y, MappingToGUI trans) {
         super(y, trans);
     }
 

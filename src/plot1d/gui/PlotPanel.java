@@ -5,7 +5,7 @@
 
  */
 
-package plot1d;
+package plot1d.gui;
 
 import java.io.*;
 import javax.swing.*;

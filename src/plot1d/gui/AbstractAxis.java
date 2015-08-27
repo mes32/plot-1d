@@ -5,7 +5,7 @@
 
  */
 
-package plot1d;
+package plot1d.gui;
 
 import java.awt.*;
 import java.util.*;

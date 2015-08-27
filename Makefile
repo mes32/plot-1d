@@ -9,6 +9,7 @@
 SRC = ./src/
 SRC_PLOT = ./src/plot1d/
 SRC_DATA = ./src/plot1d/data/
+SRC_GUI = ./src/plot1d/gui/
 
 BUILD = ./build/classes/
 
@@ -34,22 +35,22 @@ JC = javac
 CLASSES = \
 	$(SRC)Plot1dApp.java \
 	$(SRC_DATA)InputObject.java \
-	$(SRC_PLOT)PlotGUI.java \
-	$(SRC_PLOT)PlotFrame.java \
-	$(SRC_PLOT)PlotPanel.java \
-	$(SRC_PLOT)BorderBox.java \
-	$(SRC_PLOT)MappingToGUI.java \
-	$(SRC_PLOT)AbstractAxis.java \
-	$(SRC_PLOT)HorizontalAxis.java \
-	$(SRC_PLOT)PrimaryHorizontalAxis.java \
-	$(SRC_PLOT)SecondaryHorizontalAxis.java \
-	$(SRC_PLOT)VerticalAxis.java \
-	$(SRC_PLOT)PrimaryVerticalAxis.java \
-	$(SRC_PLOT)SecondaryVerticalAxis.java \
 	$(SRC_DATA)DataSet.java \
 	$(SRC_DATA)DataField.java \
 	$(SRC_DATA)DataPoint.java \
 	$(SRC_DATA)RegionExtent.java \
+	$(SRC_GUI)PlotGUI.java \
+	$(SRC_GUI)PlotFrame.java \
+	$(SRC_GUI)PlotPanel.java \
+	$(SRC_GUI)BorderBox.java \
+	$(SRC_GUI)MappingToGUI.java \
+	$(SRC_GUI)AbstractAxis.java \
+	$(SRC_GUI)HorizontalAxis.java \
+	$(SRC_GUI)PrimaryHorizontalAxis.java \
+	$(SRC_GUI)SecondaryHorizontalAxis.java \
+	$(SRC_GUI)VerticalAxis.java \
+	$(SRC_GUI)PrimaryVerticalAxis.java \
+	$(SRC_GUI)SecondaryVerticalAxis.java \
 
 
 # Set the default make target
@@ -68,5 +69,5 @@ classes: $(CLASSES)
 
 # Set the clean behavior
 clean:
-	rm $(BUILD)*.class ; rm $(BUILD)plot1d/*.class ; rm $(BUILD)plot1d/data/*.class
+	rm -f $(BUILD)*.class ; rm -f $(BUILD)plot1d/*.class ; rm -f $(BUILD)plot1d/data/*.class ; rm -f $(BUILD)plot1d/gui/*.class
 
