@@ -5,18 +5,19 @@
 
  */
 
-package plot1d.gui;
+package plot1d.gui.axes;
 
 import java.awt.*;
 import java.util.*;
 
 import plot1d.data.*;
+import plot1d.gui.*;
 
 
 /**
  * This abstract class represents a horizontal/vertical axis drawn on PlotPanel
  */
-abstract class AbstractAxis {
+abstract public class AbstractAxis {
 
     public static AbstractAxis[] factory(MappingToGUI trans) {
 
@@ -86,6 +87,6 @@ abstract class AbstractAxis {
         return regularInterval * scaleFactor;
     }
 
-    abstract void draw(Graphics g);
+    abstract public void draw(Graphics g);
 }
 

@@ -9,7 +9,8 @@
 SRC = ./src/
 SRC_PLOT = ./src/plot1d/
 SRC_DATA = ./src/plot1d/data/
-SRC_GUI = ./src/plot1d/gui/
+SRC_GUI  = ./src/plot1d/gui/
+SRC_AXES = ./src/plot1d/gui/axes/
 
 BUILD = ./build/classes/
 
@@ -44,13 +45,13 @@ CLASSES = \
 	$(SRC_GUI)PlotPanel.java \
 	$(SRC_GUI)BorderBox.java \
 	$(SRC_GUI)MappingToGUI.java \
-	$(SRC_GUI)AbstractAxis.java \
-	$(SRC_GUI)HorizontalAxis.java \
-	$(SRC_GUI)PrimaryHorizontalAxis.java \
-	$(SRC_GUI)SecondaryHorizontalAxis.java \
-	$(SRC_GUI)VerticalAxis.java \
-	$(SRC_GUI)PrimaryVerticalAxis.java \
-	$(SRC_GUI)SecondaryVerticalAxis.java \
+	$(SRC_AXES)AbstractAxis.java \
+	$(SRC_AXES)HorizontalAxis.java \
+	$(SRC_AXES)PrimaryHorizontalAxis.java \
+	$(SRC_AXES)SecondaryHorizontalAxis.java \
+	$(SRC_AXES)VerticalAxis.java \
+	$(SRC_AXES)PrimaryVerticalAxis.java \
+	$(SRC_AXES)SecondaryVerticalAxis.java \
 
 
 # Set the default make target
@@ -69,5 +70,5 @@ classes: $(CLASSES)
 
 # Set the clean behavior
 clean:
-	rm -f $(BUILD)*.class ; rm -f $(BUILD)plot1d/*.class ; rm -f $(BUILD)plot1d/data/*.class ; rm -f $(BUILD)plot1d/gui/*.class
+	rm -f $(BUILD)*.class ; rm -f $(BUILD)plot1d/*.class ; rm -f $(BUILD)plot1d/data/*.class ; rm -f $(BUILD)plot1d/gui/*.class ; rm -f $(BUILD)plot1d/gui/axes/*.class
 

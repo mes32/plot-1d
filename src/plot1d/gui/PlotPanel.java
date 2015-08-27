@@ -12,6 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import plot1d.data.*;
+import plot1d.gui.axes.*;
 
 
 /**

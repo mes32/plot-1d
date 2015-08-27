@@ -5,13 +5,14 @@
 
  */
 
-package plot1d.gui;
+package plot1d.gui.axes;
 
 import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 
 import plot1d.*;
+import plot1d.gui.*;
 
 
 /**
