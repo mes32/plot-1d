@@ -1,8 +1,8 @@
 /*
- *  DataField.java - plot-1d
- *
- *  This class is part of the package plot1d
- *
+    DataField.java
+
+    This class is part of the program plot-1d
+
  */
 
 package plot1d.data;
@@ -11,7 +11,8 @@ import java.io.*;
 
 
 /**
- * This represents one field/variable in a dataset to plot using plot-1d. See DataSet.java.
+ * This represents one field/variable in a dataset to plot. There could several variables per 
+ * dataset. See DataSet.java. This variable is primarily a list points to plot. See DataPoint.java.
  */
 public class DataField {
 
@@ -23,10 +24,16 @@ public class DataField {
         this.points = points;
     }
 
+    /**
+     * Returns the data points associated with this field/variable
+     */
     public DataPoint[] getPoints() {
         return points;
     }
 
+    /**
+     * Returns the number of data points associated with this field/variable
+     */
     public int getPointsLength() {
         return points.length;
     }
