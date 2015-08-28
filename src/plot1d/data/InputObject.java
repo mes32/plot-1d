@@ -1,7 +1,7 @@
 /*
     InputObject.java
 
-    This class is part of the package plot1d
+    This class is part of the program plot-1d
 
  */
 

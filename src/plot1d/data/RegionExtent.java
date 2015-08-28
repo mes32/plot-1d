@@ -1,7 +1,7 @@
 /*
-    RegionExtent.java - plot-1d
+    RegionExtent.java
 
-    This class is part of the package plot1d
+    This class is part of the program plot-1d
 
  */
 
@@ -13,8 +13,7 @@ import java.awt.*;
 
 
 /**
- * This represents a 2-dimensional point. A single sample from a 1-dimensional dataset. See 
- * DataField.java.
+ * This represents a rectangular region that encompasses the extent of a set of data points.
  */
 public class RegionExtent {
 
@@ -30,6 +29,9 @@ public class RegionExtent {
         this.maxY = maxY;
     }
 
+    /**
+     * Alternate constructor that expands an input region by a percentage in each direction.
+     */
     public RegionExtent(RegionExtent input, double expansionFactor) {
         double inputRangeX = input.getRangeX();
         double inputRangeY = input.getRangeY();
@@ -43,30 +45,51 @@ public class RegionExtent {
         this.maxY = input.getMaxY() + yPadding;
     }
 
+    /**
+     * Returns the minimum x-axis value found in the set of input points
+     */
     public double getMinX() {
         return minX;
     }
 
+    /**
+     * Returns the minimum y-axis value found in the set of input points
+     */
     public double getMinY() {
         return minY;
     }
 
+    /**
+     * Returns the maximum x-axis value found in the set of input points
+     */
     public double getMaxX() {
         return maxX;
     }
 
+    /**
+     * Returns the maximum y-axis value found in the set of input points
+     */
     public double getMaxY() {
         return maxY;
     }
 
+    /**
+     * Returns the range of x-axis values found in the set of input points
+     */
     public double getRangeX() {
         return maxX - minX;
     }
 
+    /**
+     * Returns the range of y-axis values found in the set of input points
+     */
     public double getRangeY() {
         return maxY - minY;
     }
 
+    /**
+     * Returns true if a given value falls within the x-axis values of this rectangular region
+     */
     public boolean containsX(double x) {
         if (x > maxX || x < minX) {
             return false;
@@ -75,6 +98,9 @@ public class RegionExtent {
         }
     }
 
+    /**
+     * Returns true if a given value falls within the y-axis values of this rectangular region
+     */
     public boolean containsY(double y) {
         if (y > maxY || y < minY) {
             return false;
