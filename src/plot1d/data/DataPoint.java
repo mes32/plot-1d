@@ -7,7 +7,6 @@
 
 package plot1d.data;
 
-import java.io.*;
 import java.awt.*;
 
 import plot1d.gui.*;
