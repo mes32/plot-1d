@@ -1,7 +1,7 @@
 /*
     PlotGUI.java
 
-    This class is part of the package plot1d
+    This class is part of the program plot-1d
 
  */
 
@@ -22,7 +22,6 @@ public class PlotGUI {
 
     public PlotGUI(InputObject input) {
         frame = new PlotFrame(input.getFileName());
-
         panel = new PlotPanel(input.getPoints());
         frame.add(panel);
 
