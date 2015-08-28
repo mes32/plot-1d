@@ -1,7 +1,7 @@
 /*
-    Plot1dApp.java - plot-1d
+    Plot1dApp.java
 
-    This is the main application class for the plot-1d project. 
+    This class is part of the program plot-1d
 
  */
 
