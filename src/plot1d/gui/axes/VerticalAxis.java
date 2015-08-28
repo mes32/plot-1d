@@ -1,17 +1,14 @@
 /*
     VerticalAxis.java
 
-    This class is part of the package plot1d
+    This class is part of the program plot-1d
 
  */
 
 package plot1d.gui.axes;
 
-import java.io.*;
-import javax.swing.*;
 import java.awt.*;
 
-import plot1d.*;
 import plot1d.gui.*;
 
 
@@ -37,12 +34,19 @@ abstract class VerticalAxis extends AbstractAxis {
         bottom = trans.getBox().getBottom();
     }
 
+    /**
+     * Returns the color of the axis line
+     */
     abstract Color getColor();
 
+    @Override
     public void draw(Graphics g) {
+
+        // Draw the axis line
         g.setColor(this.getColor());
         g.drawLine(axisX, top, axisX, bottom);
 
+        // Draw string below the bottom of the plot labeling the x-axis position of this vertical axis
         g.setColor(LABEL_COLOR);
         g.setFont(LABEL_FONT);
         FontMetrics metric = g.getFontMetrics(LABEL_FONT);

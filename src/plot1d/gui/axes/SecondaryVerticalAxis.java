@@ -1,17 +1,14 @@
 /*
     SecondaryVerticalAxis.java
 
-    This class is part of the package plot1d
+    This class is part of the program plot-1d
 
  */
 
 package plot1d.gui.axes;
 
-import java.io.*;
-import javax.swing.*;
 import java.awt.*;
 
-import plot1d.*;
 import plot1d.gui.*;
 
 
