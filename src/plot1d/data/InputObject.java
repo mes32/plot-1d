@@ -1,5 +1,5 @@
 /*
-    InputObject.java - plot-1d
+    InputObject.java
 
     This class is part of the package plot1d
 
@@ -35,10 +35,16 @@ public class InputObject {
         dataSet = new DataSet(file);
     }
 
+    /**
+     * Returns a nicely formatted string of the filename given in this input command.
+     */
     public String getFileName() {
         return file.getName() + " (" + file.getParentFile().getPath() + ")";
     }
 
+    /**
+     * Returns an array of data points provided in this input command.
+     */
     public DataPoint[] getPoints() {
         return dataSet.getPoints();
     }
