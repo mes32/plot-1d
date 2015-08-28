@@ -1,19 +1,19 @@
 /*
     BorderBox.java
 
-    This class is part of the package plot1d
+    This class is part of the program plot-1d
 
  */
 
 package plot1d.gui;
 
-import java.io.*;
-import javax.swing.*;
 import java.awt.*;
 
 
 /**
- * This is an extension of JPanel for use by PlotGUI
+ * This represents a rectangular region with a border inside the main GUI panel. This rectangular 
+ * box encloses the plotted data points and the plot axes. Additional annotation of the plot (title,
+ * axes labels, unit labels, etc) occupy other areas of the GUI panel surrounding this box.
  */
 public class BorderBox {
 
@@ -40,30 +40,55 @@ public class BorderBox {
         y = MARGIN_TOP;
     }
 
+    /**
+     * Returns the width in pixels of the rectanglar region enclosed by this border box
+     */
     public int getWidth() {
         return width;
     }
 
+    /**
+     * Returns the height in pixels of the rectanglar region enclosed by this border box
+     */
     public int getHeight() {
         return height;
     }
 
+    /**
+     * Returns the top-most position of this rectanglar region. This position is in pixels relative 
+     * to the enclosing frame.
+     */
     public int getTop() {
         return y;
     }
 
+    /**
+     * Returns the bottom-most position of this rectanglar region. This position is in pixels 
+     * relative to the enclosing frame.
+     */
     public int getBottom() {
         return y + height;
     }
 
+    /**
+     * Returns the left-most position of this rectanglar region. This position is in pixels relative
+     * to the enclosing frame.
+     */
     public int getLeft() {
         return x;
     }
 
+    /**
+     * Returns the right-most position of this rectanglar region. This position is in pixels 
+     * relative to the enclosing frame.
+     */
     public int getRight() {
         return x + width;
     }
 
+    /**
+     * Draws this box with a border onto the GUI
+     */
     public void draw(Graphics g) {
         g.setColor(BORDER_COLOR);
         g.drawRect(x, y, width, height);
