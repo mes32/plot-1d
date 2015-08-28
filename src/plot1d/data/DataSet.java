@@ -1,8 +1,8 @@
 /*
- *  DataSet.java - plot-1d
- *
- *  This class is part of the package plot1d
- *
+    DataSet.java
+  
+    This class is part of the program plot-1d
+  
  */
 
 package plot1d.data;
@@ -12,7 +12,7 @@ import java.util.*;
 
 
 /**
- * This represents a dataset to plot using plot-1d
+ * This represents a dataset to plot. It has one or more fields/variables. See DataField.java.
  */
 public class DataSet {
 
@@ -71,6 +71,9 @@ public class DataSet {
         fields[0] = new DataField(points);
     }
 
+    /**
+     * Returns the data points associated with this dataset
+     */
     public DataPoint[] getPoints() {
 
         int totalLength = 0;
@@ -90,12 +93,4 @@ public class DataSet {
 
         return points;
     }
-
-    /*public void addFile(File file) {
-
-    }*/
-
-    /*public void plot() {
-
-    }*/
 }
