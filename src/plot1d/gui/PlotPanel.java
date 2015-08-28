@@ -1,7 +1,7 @@
 /*
     PlotPanel.java
 
-    This class is part of the package plot1d
+    This class is part of the program plot-1d
 
  */
 
@@ -27,9 +27,7 @@ public class PlotPanel extends JPanel {
     private AbstractAxis[] axes;
 
     public PlotPanel(DataPoint[] points) {
-
         this.points = points;
-
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         setSize(new Dimension(WIDTH, HEIGHT));
@@ -40,6 +38,10 @@ public class PlotPanel extends JPanel {
         setBackground(Color.white);
     }
 
+    /**
+     * Draws all the graphical elements on this panel. Calls a number of functions specialized for 
+     * drawing each type of element.
+     */
     private void drawAll(Graphics g) {
 
         RegionExtent extent = DataPoint.getExtent(points);
@@ -64,6 +66,9 @@ public class PlotPanel extends JPanel {
         repaint();
     }
 
+    /**
+     * Draws all the plot axes on this panel.
+     */
     private void drawAxes(Graphics g, MappingToGUI trans) {
         if (axes != null) {
             for (AbstractAxis axis : axes) {
@@ -72,10 +77,18 @@ public class PlotPanel extends JPanel {
         }
     }
 
+    /**
+     * Draws a box with a border around the main plotting region on this panel. This region 
+     * contains all the data points and axes with additional anotation such as plot title, axes 
+     * labels, and unit labels in the surrounding regions 
+     */
     private void drawBorderBox(Graphics g, BorderBox box) {
         box.draw(g);
     }
 
+    /**
+     * Draws all the data points on this panel.
+     */
     private void drawPoints(Graphics g, MappingToGUI trans) {
         for (DataPoint point : points) {
             point.draw(g, trans);
