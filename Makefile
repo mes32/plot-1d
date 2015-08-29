@@ -1,7 +1,7 @@
 #
-#   Makefile - plot-1d
+#   Makefile
 #
-#   This is the main makefile for building the Java language project named 'plot-1d'
+#   This is the main makefile for building the Java language program plot-1d
 #
 
 
@@ -11,6 +11,7 @@ SRC_PLOT = ./src/plot1d/
 SRC_DATA = ./src/plot1d/data/
 SRC_GUI  = ./src/plot1d/gui/
 SRC_AXES = ./src/plot1d/gui/axes/
+SRC_EXCEPTIONS = ./src/plot1d/exceptions/
 
 BUILD = ./build/classes/
 
@@ -52,6 +53,9 @@ CLASSES = \
 	$(SRC_AXES)VerticalAxis.java \
 	$(SRC_AXES)PrimaryVerticalAxis.java \
 	$(SRC_AXES)SecondaryVerticalAxis.java \
+	$(SRC_EXCEPTIONS)NoInputFileSpecifiedException.java \
+	$(SRC_EXCEPTIONS)InputFileNotFoundException.java \
+	$(SRC_EXCEPTIONS)InvalidInputFileException.java \
 
 
 # Set the default make target
@@ -70,5 +74,5 @@ classes: $(CLASSES)
 
 # Set the clean behavior
 clean:
-	rm -f $(BUILD)*.class ; rm -f $(BUILD)plot1d/*.class ; rm -f $(BUILD)plot1d/data/*.class ; rm -f $(BUILD)plot1d/gui/*.class ; rm -f $(BUILD)plot1d/gui/axes/*.class
+	rm -f $(BUILD)*.class ; rm -f $(BUILD)plot1d/*.class ; rm -f $(BUILD)plot1d/data/*.class ; rm -f $(BUILD)plot1d/gui/*.class ; rm -f $(BUILD)plot1d/gui/axes/*.class ; rm -f $(BUILD)plot1d/exceptions/*.class
 

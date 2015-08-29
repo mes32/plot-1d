@@ -10,6 +10,7 @@ package plot1d.data;
 import java.io.*;
 
 import plot1d.data.*;
+import plot1d.exceptions.*;
 
 
 /**
@@ -22,11 +23,9 @@ public class InputObject {
     private String fileName;
     private DataSet dataSet;
 
-    public InputObject(String[] args) {
+    public InputObject(String[] args) throws NoInputFileSpecifiedException, InputFileNotFoundException {
         if (args.length == 0) {
-            // *** Should throw an exception instead of crash
-            System.err.println("Missing input file");
-            System.exit(1);
+            throw new NoInputFileSpecifiedException();
         }
 
         String path = args[0];

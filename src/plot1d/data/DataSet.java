@@ -10,6 +10,8 @@ package plot1d.data;
 import java.io.*;
 import java.util.*;
 
+import plot1d.exceptions.*;
+
 
 /**
  * This represents a dataset to plot. It has one or more fields/variables. See DataField.java.
@@ -18,7 +20,7 @@ public class DataSet {
 
     private DataField[] fields;
 
-    public DataSet(File file) {
+    public DataSet(File file) throws InputFileNotFoundException, InvalidInputFileException {
 
         // *** For now assume file contains a single set of space delimited points (i.e. one field) and no header row
         List<DataPoint> pointList = new ArrayList<DataPoint>();
@@ -26,6 +28,10 @@ public class DataSet {
         FileInputStream inputStream = null;
         BufferedReader br = null;
         try {
+            if (file.isDirectory()) {
+                throw new InvalidInputFileException("Input file cannot be a directory. " + file);
+            }
+
             // Open input file
             inputStream = new FileInputStream(file);
             br = new BufferedReader(new InputStreamReader(inputStream));
@@ -36,9 +42,7 @@ public class DataSet {
 
                 String[] tokens = line.split(" ");
                 if (tokens.length != 0 && tokens.length != 2) {
-                    // *** Should throw an exception instead of crash
-                    System.err.println("In DataSet.java - Invalid line found in input file");
-                    System.exit(1);
+                    throw new InvalidInputFileException("Invalid input file. " + file);
                 }
                 if (tokens.length == 0) {
                     continue;
@@ -52,17 +56,14 @@ public class DataSet {
             // Close file
             br.close();
         } catch (FileNotFoundException e) {
-            // *** Should throw an exception instead of crash
-            System.err.println("In DataSet.java - FileNotFoundException");
-            System.exit(1);
+            throw new InputFileNotFoundException("Input file not found. " + file);
         } catch (IOException e) {
-            // *** Should throw an exception instead of crash
-            System.err.println("In DataSet.java - IOException");
+            e.printStackTrace();
             System.exit(1);
         } finally {
             try {
                 br.close();
-            } catch (IOException e) {} 
+            } catch (Exception e) {} 
         }
 
         DataPoint[] points = pointList.toArray(new DataPoint[pointList.size()]);
