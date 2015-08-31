@@ -48,8 +48,9 @@ public class DataSet {
                     continue;
                 }
 
-                double x = Double.parseDouble(tokens[0].trim());
-                double y = Double.parseDouble(tokens[1].trim());
+                // Parse tokens for numeric information (ignore any commas)
+                double x = Double.parseDouble(tokens[0].trim().replaceAll(",", ""));
+                double y = Double.parseDouble(tokens[1].trim().replaceAll(",", ""));
                 pointList.add(new DataPoint(x, y));
             }
 
