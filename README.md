@@ -1,5 +1,5 @@
 # plot-1d
-![Screenshot of sine function scatter plot](./resources/images/screenshots/sine.png)
+![Screenshot of sine function scatter plot](./resources/images/screenshots/damped_harmonic_oscillator.png)
 
 Generate scatter plots from formatted text files
 
