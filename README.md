@@ -1,11 +1,7 @@
 # plot-1d
 ![Screenshot of sine function scatter plot](./resources/images/screenshots/damped_harmonic_oscillator.png)
 
-<<<<<<< HEAD
 This program generates plots of time series data. It can also plot other univariate (one-dimensional) functions and function-like pairs of values. Input data is provided in formatted text files with space-delimited columns of numbers.
-=======
-This program generates plots of time series data described formatted text files. It can also plot other univariate (one-dimensional) functions and function-like pairs of values.
->>>>>>> b4b6bf7fe9bfd9ed3ed08e11164f1cdfc189c34d
 
 ## Usage
 Launch the application using the shell script `plot-1d.sh`. This script takes a single text file as input.
