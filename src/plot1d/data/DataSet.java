@@ -42,16 +42,20 @@ public class DataSet {
 
                 String[] tokens = line.split(" ");
                 if (tokens.length != 0 && tokens.length != 2) {
-                    throw new InvalidInputFileException("Invalid input file. " + file);
+                    throw new InvalidInputFileException("Invalid input file (incorrect number of columns). " + file);
                 }
                 if (tokens.length == 0) {
                     continue;
                 }
 
-                // Parse tokens for numeric information (ignore any commas)
-                double x = Double.parseDouble(tokens[0].trim().replaceAll(",", ""));
-                double y = Double.parseDouble(tokens[1].trim().replaceAll(",", ""));
-                pointList.add(new DataPoint(x, y));
+                try {
+                    // Parse tokens for numeric information (ignore any commas)
+                    double x = Double.parseDouble(tokens[0].trim().replaceAll(",", ""));
+                    double y = Double.parseDouble(tokens[1].trim().replaceAll(",", ""));
+                    pointList.add(new DataPoint(x, y));
+                } catch (NumberFormatException e) {
+                    throw new InvalidInputFileException("Invalid input file (contains non-numeric data). " + file);
+                }
             }
 
             // Close file
