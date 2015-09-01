@@ -37,7 +37,7 @@ You can find some sample input files in the subdirectory `./test/data`.
 # y: Population of Bronx County, New York
 ./plot-1d.sh ./test/data/population_bronx.1d
 
-# Plots the concentration of CO2 in earth's atmosphere (estimated planet-wide average) by year
+# Plots the concentration of CO2 in Earth's atmosphere (estimated world wide mean) by year
 # x: Year (negative values indicate BC)
 # y: Atomospheric Carbon Dioxide concentration in ppm
 ./plot-1d.sh ./test/data/atmospheric_C02_ppm.1d
