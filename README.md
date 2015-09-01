@@ -37,14 +37,14 @@ You can find some sample input files in the subdirectory `./test/data`.
 # y: Population of Bronx County, New York
 ./plot-1d.sh ./test/data/population_bronx.1d
 
-# Plots estimated mean world-wide atmospheric CO2 by year
+# Plots the concentration of CO2 in earth's atmosphere (estimated planet-wide average) by year
 # x: Year (negative values indicate BC)
-# y: Atomospheric Carbon Dioxide in ppm
+# y: Atomospheric Carbon Dioxide concentration in ppm
 ./plot-1d.sh ./test/data/atmospheric_C02_ppm.1d
 ```
 
 ## Requirements
-To run this program you will need the Java 7 JRE or later. To develop this project you will need Java 7 JDK as well as the program make.
+To run this program you will need Java 7 JRE or later. To develop this project you will need Java 7 JDK as well as the program make.
 
 ## Licence
 Copyright 2015 Michael Stockman
