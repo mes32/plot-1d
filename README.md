@@ -26,21 +26,21 @@ The input data file should contain two columns of numbers separated by a space. 
 You can find sample input files under `./test/data`.
 
 ```
-# Plots a sine function
-./plot-1d.sh ./test/data/sine.1d 
+# Plots a damped harmonic oscillator over time
+./plot-1d.sh ./test/data/damped_harmonic_oscillator.1d
 
 # Plots a square wave
 ./plot-1d.sh ./test/data/square_wave.1d
 
-# Plots the price of diamonds versus mass for a sample of more than 50,000 diamonds
-# x: price of diamond in US dollars
-# y: mass in carats
-./plot-1d.sh ./test/data/diamonds.1d
+# Plots the population of the Bronx by year
+# x: year
+# y: population of Bronx County, New York
+./plot-1d.sh ./test/data/population_bronx.1d
 
-# Plots Francis Galton's data on the heights of parents and their children (Galton 1886)
-# x: child height in inches
-# y: average of parents height in inches
-./plot-1d.sh ./test/data/galton.1d
+# Plots mean world-wide atmospheric CO2 by year
+# x: year (negative values indicate BC)
+# y: Estimated world-wide atomospheric Carbon Dioxide concentration in parts per million
+./plot-1d.sh ./test/data/atmospheric_C02_ppm.1d
 ```
 
 ## Requirements
