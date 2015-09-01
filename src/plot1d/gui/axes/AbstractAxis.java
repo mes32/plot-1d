@@ -17,19 +17,22 @@ import plot1d.gui.*;
 /**
  * This abstract class represents a horizontal/vertical axis drawn on PlotPanel
  */
-abstract public class AbstractAxis {
+abstract public class AbstractAxis implements Comparable<AbstractAxis> {
 
+    /**
+     * Returns a sorted array of axes based on the dimensions of the data and the plot
+     */
     public static AbstractAxis[] factory(MappingToGUI trans) {
 
-        RegionExtent extent = trans.getDataExtent();
+        RegionExtent dataExtent = trans.getDataExtent();
         RegionExtent plotExtent = trans.getPlotExtent();
 
-        double intervalX = getInterval(extent.getRangeX());
-        double intervalY = getInterval(extent.getRangeY());
+        double intervalX = getInterval(dataExtent.getRangeX());
+        double intervalY = getInterval(dataExtent.getRangeY());
 
         java.util.List<AbstractAxis> outList = new ArrayList<AbstractAxis>();
 
-        if (extent.containsX(0.0)) {
+        if (dataExtent.containsX(0.0)) {
             // Add the primary x-axis axis (x=0) if it is within the range of the data points
             // The add secondary x-axes on intervals above and below the primary
 
@@ -42,8 +45,8 @@ abstract public class AbstractAxis {
             for (int i=-1; i*intervalX >= plotExtent.getMinX(); i--) {
                 outList.add(new SecondaryVerticalAxis(i*intervalX, trans));
             }
-        } else if (0.0 < extent.getMinX()) {
-            // From below extent start at x=0 and move up adding needed secondary axis
+        } else if (0.0 < dataExtent.getMinX()) {
+            // From below data extent start at x=0 and move up adding needed secondary axis
 
             for (int i=0; i*intervalX <= plotExtent.getMaxX(); i++) {
                 if (i*intervalX >= plotExtent.getMinX()) {
@@ -51,7 +54,7 @@ abstract public class AbstractAxis {
                 }
             }
         } else {
-            // From above extent start at x=0 and move down adding needed secondary axis
+            // From above data extent start at x=0 and move down adding needed secondary axis
 
             for (int i=0; i*intervalX >= plotExtent.getMinX(); i--) {
                 if (i*intervalX <= plotExtent.getMaxX()) {
@@ -60,7 +63,7 @@ abstract public class AbstractAxis {
             }
         }
 
-        if (extent.containsY(0.0)) {
+        if (dataExtent.containsY(0.0)) {
             // Add the primary y-axis axis (y=0) if it is within the range of the data points
             // The add secondary y-axes on intervals above and below the primary
 
@@ -73,8 +76,8 @@ abstract public class AbstractAxis {
             for (int i=-1; i*intervalY >= plotExtent.getMinY(); i--) {
                 outList.add(new SecondaryHorizontalAxis(i*intervalY, trans));
             }
-        } else if (0.0 < extent.getMinY()) {
-            // From below extent start at y=0 and move up adding needed secondary axis
+        } else if (0.0 < dataExtent.getMinY()) {
+            // From below data extent start at y=0 and move up adding needed secondary axis
 
             for (int i=0; i*intervalY <= plotExtent.getMaxY(); i++) {
                 if (i*intervalY >= plotExtent.getMinY()) {
@@ -82,7 +85,7 @@ abstract public class AbstractAxis {
                 }
             }
         } else {
-            // From above extent start at y=0 and move down adding needed secondary axis
+            // From above data extent start at y=0 and move down adding needed secondary axis
 
             for (int i=0; i*intervalY >= plotExtent.getMinY(); i--) {
                 if (i*intervalY <= plotExtent.getMaxY()) {
@@ -91,7 +94,9 @@ abstract public class AbstractAxis {
             }
         }
 
-        return outList.toArray(new AbstractAxis[outList.size()]);
+        AbstractAxis[] outArray = outList.toArray(new AbstractAxis[outList.size()]);
+        Arrays.sort(outArray);
+        return outArray;
     }
 
     /**
@@ -127,5 +132,21 @@ abstract public class AbstractAxis {
      * Draws this axis on the PlotPanel
      */
     abstract public void draw(Graphics g);
+
+    /**
+     * Returns the priority of this axis. This value is used for sorting an plot layering purposes.
+     */
+    abstract public int getPriority();
+
+    /**
+     * Compares two axes based on priority. Axes have priority as follows (primary=1, secondary=2, 
+     * etc). This comparison sorts the lower priory numbers later so that they are painted on top of
+     * the other axes.
+     */
+    public int compareTo(AbstractAxis other) {
+        Integer x = new Integer(this.getPriority());
+        Integer y = new Integer(other.getPriority());
+        return y.compareTo(x);
+    }
 }
 

@@ -18,6 +18,7 @@ import plot1d.gui.*;
 public class PrimaryVerticalAxis extends VerticalAxis {
 
     private static final Color AXIS_COLOR = new Color(100, 100, 100);
+    private static final int PRIORITY = 1;
 
     public PrimaryVerticalAxis(double y, MappingToGUI trans) {
         super(y, trans);
@@ -26,6 +27,11 @@ public class PrimaryVerticalAxis extends VerticalAxis {
     @Override
     protected Color getColor() {
         return AXIS_COLOR;
+    }
+
+    @Override
+    public int getPriority() {
+        return PRIORITY;
     }
 }
 

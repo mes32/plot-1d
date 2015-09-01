@@ -18,6 +18,7 @@ import plot1d.gui.*;
 public class SecondaryHorizontalAxis extends HorizontalAxis {
 
     private static final Color AXIS_COLOR = new Color(240, 240, 240);
+    private static final int PRIORITY = 2;
 
     public SecondaryHorizontalAxis(double y, MappingToGUI trans) {
         super(y, trans);
@@ -26,6 +27,11 @@ public class SecondaryHorizontalAxis extends HorizontalAxis {
     @Override
     protected Color getColor() {
         return AXIS_COLOR;
+    }
+
+    @Override
+    public int getPriority() {
+        return PRIORITY;
     }
 }
 
